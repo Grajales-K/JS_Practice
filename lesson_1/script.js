@@ -49,3 +49,11 @@ let bankAccount = 100;
 document.body.innerHTML = '';
 
 
+
+// to  insert a new line in  a popup, use the \n character. 
+// For example:
+
+alert('new\n  learning') // new
+                        // learning
+
+
