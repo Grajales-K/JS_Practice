@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>testing html</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -25,23 +26,24 @@
         siglo
         XVI, fue el lugar de bautizo de Napoleón y alberga cuadros de Delacroix y Tintoretto. ― Google
     </p>
+<!-- 
+    create a simple product card with the title, price, and two buttons for adding to the cart and buying now. The buttons should have onclick events that display alerts when clicked. -->
 
     <div class="paidBox">
-        <h2 class="boxTitle">Adults Plain T-shirt</h2>
-
-        <h3 class="PriceTitle">Price $7.99</h3>
+        <p class="boxTitle">Adults Plain T-shirt</p>
+        <p class="PriceTitle">Price $7.99</p>
 
         <div class="ControlBtn">
             <button title="item selected" class="orderbtn" onclick="
-            alert('item added to the card');
+            alert('$7.99 added to the cart');
             ">Add to the card </button>
-            <button title="pay item" class="paid" onclick="
-            alert('item paid');
+
+            <button title="payBtn" class="paid" onclick="
+            console.log('Loading...')
+            alert('Purchased');
             ">Buy now </button>
         </div>
     </div>
-
-
 
 
     <script>
