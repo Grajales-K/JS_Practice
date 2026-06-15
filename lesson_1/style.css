@@ -8,8 +8,10 @@
 body {
     background-color: azure;
     text-align: center; 
+    padding: 0 4rem;
     font-family: sans-serif;
     width: 100%;
+
 }
 
 button, p, .paidBox {
@@ -22,11 +24,14 @@ button, p, .paidBox {
     border: 2px solid rgb(68, 255, 131);
     padding: 2rem; 
     display: inline-block; 
+    font-size: 1.1rem;           
+    font-weight: 900;   
 }
 
 
 .boxTitle, .PriceTitle, .ControlBtn {
     margin-top: 1rem;
+
 }
 
 
@@ -67,7 +72,7 @@ button:active {
 }
 
 button.paid {
-    background-color: #28a745; /* Verde llamativo */
+    background-color: #28a745; 
 }
 
 button.paid:hover {
