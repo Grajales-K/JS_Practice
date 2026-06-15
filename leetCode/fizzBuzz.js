@@ -1,8 +1,6 @@
 // 412. Fizz Buzz
 // Given an integer n, return a string array answer (1-indexed) where:
 
-const { t } = require("tar");
-
 // answer[i] == "FizzBuzz" if i is divisible by 3 and 5.
 // answer[i] == "Fizz" if i is divisible by 3.
 // answer[i] == "Buzz" if i is divisible by 5.
@@ -31,7 +29,7 @@ const { t } = require("tar");
 let fizzBuzz = function(n) {
     let result = [];
 
-    for(i = 1; i <= n; i++){
+    for(let i = 1; i <= n; i++){
 
         if(i % 3 === 0 && i % 5 === 0){
             result.push("FizzBuzz");
