@@ -1,0 +1,75 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+}
+
+body {
+    background-color: azure;
+    text-align: center; 
+    font-family: sans-serif;
+    width: 100%;
+}
+
+button, p, .paidBox {
+    margin-top: 3rem;
+}
+
+
+.paidBox {
+    background-color: rgb(203, 255, 255);
+    border: 2px solid rgb(68, 255, 131);
+    padding: 2rem; 
+    display: inline-block; 
+}
+
+
+.boxTitle, .PriceTitle, .ControlBtn {
+    margin-top: 1rem;
+}
+
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 14px 28px;        
+    font-size: 1.1rem;           
+    font-weight: 700;          
+    text-transform: uppercase; 
+    letter-spacing: 0.5px; 
+    border-radius: 12px;     
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12); 
+    transition: all 0.2s ease; 
+}
+
+
+button:hover {
+    background-color: #0056b3;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2); 
+    transform: translateY(-2px); 
+}
+
+
+button:active {
+    transform: translateY(1px); 
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+
+.ControlBtn {
+    display: flex;
+    gap: 15px; 
+    justify-content: center; 
+    margin-top: 1.5rem;
+}
+
+button.paid {
+    background-color: #28a745; /* Verde llamativo */
+}
+
+button.paid:hover {
+    background-color: #218838;
+}
