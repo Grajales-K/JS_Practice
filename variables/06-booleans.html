@@ -19,30 +19,71 @@
 
 
     <script>
+
+          // ---------------boolean values -----------------
         true
         false
+
         // console.log(typeof true)
 
         // console.log(3 > 5 - 5)
 
         // console.log( 5 === '5.00')
 
-        if(false){
-            console.log("hello")
-        } else{
-           console.log("else") 
-        }
+        // if(false){
+        //     console.log("hello")
+        // } else{
+        //    console.log("else") 
+        // }
 
-        const age = 15;
+        // const age = 15;
 
-        if(age >= 16){
-            console.log('you can drive')
-            console.log("Congrats")
-        } else if(age >= 14){
-            console.log("almost there!")
-        } else {
-            console.log("you can't drive")
-        }
+        // if(age >= 16){
+        //     console.log('you can drive')
+        //     console.log("Congrats")
+        // } else if(age >= 14){
+        //     console.log("almost there!")
+        // } else {
+        //     console.log("you can't drive")
+        // }
+
+        // ---------------falsy values -----------------
+
+        // false, 0, '', NaN, undefined, null
+        // any other value distinct of this will be truthy
+
+
+        // ------------------ example ------------------
+        // the first if statement will not run because 0 is a falsy value, so the console.log will not be executed. The second if statement will run because 2 is a truthy value, so the console.log will be executed.
+        if (0) {
+            console.log('truthy'); //does not run
+        };
+        
+        if(2){
+            console.log('truthy'); //runs
+        };
+
+        console.log(!0); //true
+
+        console.log('text' / 5 ); // NaN
+
+        const variable1 = undefined;
+        console.log(variable1); // undefined
+
+
+        // ------------------ ternary operator ------------------
+
+        const result = true ? 'truthy' : 'falsy'; // truthy
+        console.log(result);
+
+        false && console.log("hello") // will not run because false is first and not need to check the second condition
+
+        const message = false && 'hello'; // will not run because false is a falsy value
+        console.log(message);
+
+        const currency = 5 || 'USD'; // will run because 5 is a truthy value but will take any value that is truthy, if the first value was falsy it would take the second value
+        console.log(currency);
+
     </script>
 
 </body>
