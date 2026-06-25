@@ -15,16 +15,27 @@
 
         const name = 'Matt';
 
-        let hour = 7;
+        let hour = 4;
 
         if(hour >= 6 && hour < 12) {
             console.log(`Good morning", ${name}`);
         } else if(hour >= 12 && hour < 18) {
-            console.log("Good afternoon");
+            console.log(`Good afternoon, ${name} `);
         } else {
-            console.log("Good evening");
+            console.log(`Good evening, ${name}`);
         }
 
+
+        console.log("------- age discount-------");
+        let age = 30;
+
+        if(age  <= 6 || age >= 65){
+            console.log("Discount");
+        } else {
+            console.log("No discount");
+        }
+
+        
 
     </script>
 </body>
