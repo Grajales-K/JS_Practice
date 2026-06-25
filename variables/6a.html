@@ -13,10 +13,12 @@
 
         // this value print good morning, at the value of 7, but if we change the value to 13, it will print good afternoon, and if we change the value to 19, it will print good evening.
 
+        const name = 'Matt';
+
         let hour = 7;
 
         if(hour >= 6 && hour < 12) {
-            console.log("Good morning");
+            console.log(`Good morning", ${name}`);
         } else if(hour >= 12 && hour < 18) {
             console.log("Good afternoon");
         } else {
