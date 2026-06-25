@@ -27,9 +27,12 @@
 
 
         console.log("------- age discount-------");
-        let age = 30;
+        const isHoliday = false;
 
-        if(age  <= 6 || age >= 65){
+        let age = 5;
+
+        //we use the () to make the validation first, if the age is less than or equal to 6 or greater than or equal to 65, and then we check if it is not a holiday, then we print discount, otherwise we print no discount.
+        if((age  <= 6 || age >= 65) && !isHoliday) {
             console.log("Discount");
         } else {
             console.log("No discount");
