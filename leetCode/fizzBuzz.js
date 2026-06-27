@@ -49,6 +49,9 @@ let fizzBuzz = function(n) {
 
 
 
+ 
+
+
 
 
 const testCases = [
@@ -57,7 +60,9 @@ const testCases = [
   [15, [ '1', '2', 'Fizz', '4', 'Buzz', 'Fizz', '7', '8', 'Fizz','Buzz', '11', 'Fizz', '13', '14', 'FizzBuzz']]
 ];
 
+
 console.log('-------------------- test cases --------------------');
+
 
 
 testCases.forEach(([input, expected]) => {
@@ -66,4 +71,12 @@ testCases.forEach(([input, expected]) => {
   const passed = result.join(',') === expected.join(',');
 
   console.log(`Input: ${input} Expected ${expected} | Test Passed: ${passed}`);
+
+    for(let i = 0; i < input; i++){
+        if (result.at(i) === expected.at(i)) {
+            console.log(`Elements at ${i} is equal`);
+        }
+    }
+
 });
+
