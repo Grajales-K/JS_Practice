@@ -8,21 +8,16 @@
 </head>
 
 <body>
-
-    <!-- comparation Operators
-        >   greater than
-        <   less than
-        >=  greater than or equal to
-        <=  less than or equal to
-        === equal to 
-        !== not equal to -->
-
-
     <script>
+            // comparison Operators
+            // >   greater than
+            // <   less than
+            // >=  greater than or equal to
+            // <=  less than or equal to
+            // === equal to 
+            // !== not equal to 
 
           // ---------------boolean values -----------------
-        true
-        false
 
         // console.log(typeof true)
 
@@ -76,16 +71,18 @@
         const result = true ? 'truthy' : 'falsy'; // truthy
         console.log(result);
 
-        false && console.log("hello") // will not run because false is first and not need to check the second condition
+        false && console.log("hello") /// test && guard: if first value is falsy, the next condition won’t run; 
+
+        if(condition){ // this is the same as the previous line, but it will run if the condition is truthy
+            console.log("hello")
+        }
+
 
         const message = false && 'hello'; // will not run because false is a falsy value
         console.log(message);
 
         const currency = 5 || 'USD'; // will run because 5 is a truthy value but will take any value that is truthy, if the first value was falsy it would take the second value
         console.log(currency);
-
     </script>
-
 </body>
-
 </html>
