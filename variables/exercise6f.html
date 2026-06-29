@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coin-Flip Game</title>
+</head>
+<body>
+    <h1>Coin-Flip game practice</h1>
+    <p>Open the console to check the results</p>
+
+    <script>
+
+        // declare a variable called coinFlip and assign it a random value of either "heads" or "tails". Use an if statement to print "You win!" if the value is "heads", and "You lose!" if the value is "tails".
+
+
+        // we change this variable with heads and tails to make the game more interesting, and we can also use a random number generator to simulate the coin flip.
+        const guess = 'tails';
+        
+
+
+        const randomNumber = Math.random();
+
+        // let result;
+        // if(randomNumber < 0.5) {
+        //     result = 'heads';
+        // } else {
+        //     result = 'tails';
+        // }
+
+
+        // try to use ternary operator to make the code more concise and readable.
+        const result = randomNumber < 0.5 ? 'heads' : 'tails';
+
+        if(guess === result) {
+            console.log("You win!");
+        } else {
+            console.log("You lose!");
+        }
+
+
+    </script>
+</body>
+</html>
