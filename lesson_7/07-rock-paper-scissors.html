@@ -11,7 +11,7 @@
     <div class="nav">
         <p>Rock Paper Scissors</p>
         <button onclick="
-            pickComputerMove();
+            const computerMove = pickComputerMove();
 
             let result = '';
 
@@ -28,7 +28,7 @@
         ">Rock</button>
 
         <button onclick="
-            pickComputerMove();
+            const computerMove = pickComputerMove();
     
     
             let result = '';
@@ -46,7 +46,7 @@
         ">Paper</button>
 
         <button onclick="
-            pickComputerMove();
+            const computerMove = pickComputerMove();
     
             let result = '';
     
@@ -64,10 +64,8 @@
     </div>
 
     <script>
-
-        let computerMove = '';
-
         function pickComputerMove() {
+            let computerMove = '';
 
             const randomNumber = Math.random();
 
@@ -78,6 +76,7 @@
             } else if (randomNumber >= 2 / 3 && randomNumber < 1) {
                 computerMove = 'scissors'
             };
+            return computerMove;
 
         }
 
