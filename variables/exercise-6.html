@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercise 6</title>
+</head>
+<body>
+    <h1>Boolean and If-Statements practice</h1>
+    <p>Use devtools to see the results</p>
+    <script>
+        // declare a clock variable between 0 and 23, and use if statements to print a greeting based on the time of day. For example, if the clock is between 6 and 12, print "Good morning". If the clock is between 12 and 18, print "Good afternoon". Otherwise, print "Good evening".
+
+        // this value print good morning, at the value of 7, but if we change the value to 13, it will print good afternoon, and if we change the value to 19, it will print good evening.
+
+        const name = 'Matt';
+
+        let hour = 4;
+
+        if(hour >= 6 && hour < 12) {
+            console.log(`Good morning", ${name}`);
+        } else if(hour >= 12 && hour < 18) {
+            console.log(`Good afternoon, ${name} `);
+        } else {
+            console.log(`Good evening, ${name}`);
+        }
+
+
+        console.log("------- age discount-------");
+        const isHoliday = false;
+
+        let age = 5;
+
+        //we use the () to make the validation first, if the age is less than or equal to 6 or greater than or equal to 65, and then we check if it is not a holiday, then we print discount, otherwise we print no discount.
+        if((age  <= 6 || age >= 65) && !isHoliday) {
+            console.log("Discount");
+        } else {
+            console.log("No discount");
+        }
+
+        
+
+    </script>
+</body>
+</html>
