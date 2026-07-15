@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>lesson 7 exercise</title>
+</head>
+<body>
+    
+    <script>
+        //lesson7.1
+        function greet(name){
+
+            if(!name){  //name === undefine
+                console.log("Hi there!  ");
+            } else {
+                console.log("Hello " + name);
+            }
+
+        }
+
+        greet("John");
+        greet();//undefined because it doesn't have a value, so it will return undefined. Instead will return "Hi there!" because the function has a default value for the parameter name.
+        
+        // lesson7.2
+        function convertToFahrenheit(celsius){
+            console.log( (celsius * 9/5)+ 32);
+        }
+
+        convertToFahrenheit(25); //77
+        convertToFahrenheit(30) //86
+
+    </script>
+</body>
+</html>
