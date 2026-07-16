@@ -24,11 +24,33 @@
         
         // lesson7.2
         function convertToFahrenheit(celsius){
-            console.log( (celsius * 9/5)+ 32);
+            console.log( (celsius * 9/5)+ 32, "F");
         }
 
         convertToFahrenheit(25); //77
         convertToFahrenheit(30) //86
+
+        function convertToCelsius(fahrenheit){
+            console.log((fahrenheit - 32) * 5/9, "C") ;
+        }
+
+        convertToCelsius(77); //25
+        convertToCelsius(86); //30
+
+        function convertTemperature(temperature, unit){
+            if(unit === "c"){
+                convertToFahrenheit(temperature);
+            } else if(unit === "f"){
+                convertToCelsius(temperature);
+            } else {
+                console.log("Invalid unit. Please use 'c' for Celsius or 'f' for Fahrenheit.");
+            }
+     
+        }
+
+        convertTemperature(25, "C"); //77f
+        convertTemperature(86, "f"); //30c
+        convertTemperature(100, "k"); //Invalid unit. Please use 'c' for Celsius or 'f' for Fahrenheit.
 
     </script>
 </body>
