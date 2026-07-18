@@ -8,7 +8,8 @@
 <body>
     
     <script>
-        //lesson7.1 img
+        // ------------------- lesson7.1 img
+
         function greet(name){
 
             if(!name){  //name === undefine
@@ -22,7 +23,8 @@
         greet("John");
         greet();//undefined because it doesn't have a value, so it will return undefined. Instead will return "Hi there!" because the function has a default value for the parameter name.
         
-        // lesson7.2 img
+        // ------------------ lesson7.2 img
+
         function convertToFahrenheit(celsius){
             console.log( (celsius * 9/5)+ 32, "F");
         }
@@ -52,20 +54,26 @@
         convertTemperature(86, "f"); //30c
         convertTemperature(100, "k"); //Invalid unit. Please use 'c' for Celsius or 'f' for Fahrenheit.
 
-        // lesson7.3 img
+        // ----------------- lesson7.3 img
+
         function convertLength(length, from,  to){
-            if(from === "km" && to === "mile"){
-                console.log( length * 0.621371)
+            if (from === to ) {
+                console.log(length, from)
             }
-            else if(from === "km" && to === "km"){
-                console.log(length)
+            else if (from === "km" && to === "mile") {
+                console.log(Math.round(length * 0.621371), "miles");
             }
-            else if(from === "mile" )
+            else if (from === "mile" && to === "km") {
+                console.log(Math.round(length * 1.60934 ),"km");
+            }
         }
         
+        
+        convertLength(50, "mile", "km") //80
+        convertLength(32, "km", "mile") //80
+        convertLength(50, "km", "km")  //50
+        convertLength(10, "mile", "mile") //10
 
-        convertLength(10, "km", "mile") 
-        convertLength(10, "km", "km") 
 
 
         
