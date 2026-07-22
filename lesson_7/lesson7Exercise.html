@@ -62,6 +62,7 @@
 
         function convertLength(length, from, to) {
 
+            //invalid unit
             if (from !== "km" && from !== "mile" && from !== "ft") {
                 console.log( `Invalid unit: ${from}`);
             }
@@ -69,7 +70,7 @@
             if (to !== "km" && to !== "mile" && to !== "ft") {
                 console.log(`Invalid unit: ${to}`);
             }
-
+        
             if (from === to) {
                 console.log(length, from)
             }
