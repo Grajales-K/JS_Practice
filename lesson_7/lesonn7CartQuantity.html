@@ -5,7 +5,79 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Cart Quantity</title>
-        <link rel="stylesheet" href="styles.css" />
+        <style>
+                * {
+                        margin: 0;
+                        padding: 0;
+                        box-sizing: border-box;
+                }
+        
+                body {
+                        background-color: azure;
+                        font-family: sans-serif;
+                        
+                        /* 1. Hacemos que el body ocupe toda la altura de la pantalla */
+                        min-height: 100vh;
+                        
+                        /* 2. Flexbox para centrar absolutamente todo */
+                        display: flex;
+                        justify-content: center; /* Centrado horizontal */
+                        align-items: center;     
+                        }
+        
+                button,
+                p {
+                        margin-top: 3rem;
+                }
+        
+                .nav {
+                        background-color: rgb(203, 255, 255);
+                        border: 2px solid rgb(68, 255, 131);
+                        padding: 2rem;
+                        font-size: 1.1rem;
+                        font-weight: 900;
+                        border-radius: 12px; 
+
+                }
+
+                #display {
+                        font-size: 2rem;
+                        font-weight: 700;
+                        margin-bottom: 2rem;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        color: #3d23cd;
+                
+                }
+        
+                button {
+                        background-color: #007bff;
+                        color: white;
+                        border: none;
+                        padding: 14px 28px;
+                        font-size: 1.1rem;
+                        font-weight: 700;
+                        text-transform: uppercase;
+                        letter-spacing: 0.5px;
+                        border-radius: 12px;
+                        cursor: pointer;
+                        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+                        transition: all 0.2s ease;
+                        margin: 0.5rem;
+                }
+        
+                button:hover {
+                        background-color: #0056b3;
+                        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+                        transform: translateY(-2px);
+                }
+        
+                button:active {
+                        transform: translateY(1px);
+                        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+                }
+        </style>
 </head>
 
 <body>
@@ -49,6 +121,8 @@
     </script> -->
 
         <div class="nav">
+                <p id="display">Cart quantity: 0</p>
+
                 <!-- we print the cart quantity to the console because there is no operation to display the cart quantity on the page. -->
                 <button onclick="
                         console.log(`Cart quantity: ${cartQuantity}`);">
@@ -73,11 +147,17 @@
                 <button onclick="
                         cartQuantity = 0;
                         console.log(`Cart quantity was reset: ${cartQuantity}`);
-                        ">Reset Cart
+                        displayQuantity();
+                ">Reset Cart
                 </button>
         </div>
+
         <script>
                 let cartQuantity = 0;
+
+                function displayQuantity() {
+                        document.getElementById('display').innerText = `Cart quantity: ${cartQuantity}`;
+                }
 
                 function updateCartQuantity(change) {
                   
@@ -89,7 +169,11 @@
                         
                         cartQuantity += change;
                         console.log(`Cart quantity: ${cartQuantity}`);
+                        
+                        displayQuantity();
+                        
                 }
+
         </script>
 </body>
 
