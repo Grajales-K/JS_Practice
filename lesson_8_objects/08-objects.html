@@ -8,6 +8,9 @@
 
   <body>
     <script>
+
+         console.log(" ======================= objects ========================= ");
+
         const products ={
             name: "socks",
             price: 1098
@@ -29,6 +32,44 @@
         // removing one property from the object
         delete products.newProperty;
         console.log(products);
+
+
+        console.log(" ======================= accessing object properties ========================= ");
+
+        const product2 = {
+          name: "shirt",
+          price: 1999,
+          //if we have complex property name we can use quotes
+          'delivery-time': "2 days",
+
+          ['delivery-week']: "1 week",
+
+          rating: {
+            starts: 4.5,
+            count: 87,
+          },
+          fun: function() {
+            console.log("this is a function inside an object");
+          }
+        }
+
+        console.log(product2.name);
+        console.log(product2["price"]);
+
+        //to access the complex property name we can use bracket notation
+        console.log(product2['delivery-time']);
+
+        console.log(product2['delivery-week']);
+
+        console.log(product2.rating.starts);
+
+        product2.fun();
+
+        console.log(typeof console.log);
+        console.log()
+
+
+
 
     </script>
   </body>
