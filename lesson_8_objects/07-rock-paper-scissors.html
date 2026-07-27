@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Objects</title>
+  </head>
+
+  <body>
+    <script>
+        const products ={
+            name: "socks",
+            price: 1098
+        };
+        
+        //to print what type of data type is products
+        console.log(typeof products);
+        console.log(products.name);
+
+        //object is products and property is price  ==>  property value-pair
+        console.log(products.price);
+
+        products.name = "cotton socks";
+        console.log(products.name);
+
+        products.newProperty = true;
+        console.log(products);
+
+        // removing one property from the object
+        delete products.newProperty;
+        console.log(products);
+
+    </script>
+  </body>
+</html>
