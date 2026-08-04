@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>lesson 7 exercise</title>
+</head>
+
+<body>
+
+    <script>
+        // ------------------- lesson7.1 img
+
+        function greet(name) {
+
+            if (!name) {  //name === undefine
+                console.log("Hi there!  ");
+            } else {
+                console.log("Hello " + name);
+            }
+
+        }
+
+        greet("John");
+        greet();//undefined because it doesn't have a value, so it will return undefined. Instead will return "Hi there!" because the function has a default value for the parameter name.
+
+        // ------------------ lesson7.2 img
+
+        function convertToFahrenheit(celsius) {
+            console.log((celsius * 9 / 5) + 32, "F");
+        }
+
+        convertToFahrenheit(25); //77
+        convertToFahrenheit(30) //86
+
+        function convertToCelsius(fahrenheit) {
+            console.log((fahrenheit - 32) * 5 / 9, "C");
+        }
+
+        convertToCelsius(77); //25
+        convertToCelsius(86); //30
+
+        function convertTemperature(temperature, unit) {
+            if (unit === "c") {
+                convertToFahrenheit(temperature);
+            } else if (unit === "f") {
+                convertToCelsius(temperature);
+            } else {
+                console.log("Invalid unit. Please use 'c' for Celsius or 'f' for Fahrenheit.");
+            }
+
+        }
+
+        convertTemperature(25, "c"); //77f
+        convertTemperature(86, "f"); //30c
+        convertTemperature(100, "k"); //Invalid unit. Please use 'c' for Celsius or 'f' for Fahrenheit.
+
+
+
+        // ----------------- lesson7.3 img
+
+        function convertLength(length, from, to) {
+
+            //invalid unit, preventing the function from running if the units are not valid
+            if (from !== "km" && from !== "mile" && from !== "ft") {
+                console.log( `Invalid unit: ${from}`);
+            }
+            else if (to !== "km" && to !== "mile" && to !== "ft") {
+                console.log(`Invalid unit: ${to}`);
+            }
+            // if the units are same will return the same values.
+            else if (from === to) {
+                console.log(length, from)
+            }
+            else if (from === "mile" && to === "km") {
+                console.log(Math.round(length * 1.60934), "km");
+            }
+            else if (from === "mile" && to === "ft") {
+                console.log(Math.round(length * 5280), "ft");
+            }
+            else if (from === "km" && to === "mile") {
+                console.log(Math.round(length * 0.621371), "mile");
+            }
+            else if(from === "km" && to === "ft") {
+                console.log(Math.floor(length * 3281), "ft");
+            }
+            else if(from === "ft" && to === "mile"){
+                console.log(Math.round(length / 5280), "mile" );
+            }
+            else if(from === "ft" && to === "km"){
+                console.log(Math.round(length / 3281), "km");
+            }
+        }
+
+
+        convertLength(50, "mile", "km") //80
+        convertLength(32, "km", "mile") //20
+        convertLength(50, "km", "km")  //50
+        convertLength(10, "mile", "mile") //10
+
+        convertLength(5, "mile", "ft") //26400
+        convertLength(5, "km", "ft") //16405
+
+        convertLength(5, "lbs", "ft") //invalid
+        convertLength(5, "mile", "litre") //invalid
+    </script>
+</body>
+</html>

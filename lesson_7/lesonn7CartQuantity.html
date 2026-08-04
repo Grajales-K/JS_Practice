@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart Quantity</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: azure;
+        font-family: sans-serif;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      button,
+      p {
+        margin-top: 3rem;
+      }
+
+      .nav {
+        background-color: rgb(203, 255, 255);
+        border: 2px solid rgb(68, 255, 131);
+        padding: 2rem;
+        font-size: 1.1rem;
+        font-weight: 900;
+        border-radius: 12px;
+      }
+
+      #display {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #3d23cd;
+      }
+
+      button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 14px 28px;
+        font-size: 1.1rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        border-radius: 12px;
+        cursor: pointer;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+        transition: all 0.2s ease;
+        margin: 0.5rem;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+        transform: translateY(-2px);
+      }
+
+      button:active {
+        transform: translateY(1px);
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- task 7.k lesson7.4 img
+                        
+                        re-use the code from cart quantity and create a function updateCartQuantity, modify updateCartQuantity so that if the quantity is invalid, alert() and then return; (this is called an early return). An early return make our code cleaner because we can remove the "else-if / else" -->
+
+    <!-- <div class="nav">
+                        <button onclick="
+                                console.log(`cart Quantity: ${cartQuantity}`);
+                                ">Show Quantity
+                        </button>
+                
+                        <button onclick="
+                                cartQuantity += 1;
+                                console.log(`cart Quantity: ${cartQuantity}`);
+                                ">Add to Cart
+                        </button>
+                
+                        <button onclick="
+                                cartQuantity += 2;
+                                console.log(`cart Quantity: ${cartQuantity}`);
+                                ">+2
+                        </button>
+                
+                        <button onclick="
+                                cartQuantity += 3;
+                                console.log(`cart Quantity: ${cartQuantity}`);
+                                ">+3
+                        </button>
+                
+                        <button onclick="
+                                cartQuantity = 0;
+                                console.log(`cart was reset: ${cartQuantity}`)
+                                ">Reset Cart
+                        </button>
+                
+                </div>
+                <script>
+                        let cartQuantity = 0;
+                </script> -->
+
+    <div class="nav">
+      <p id="display">Cart quantity: 0</p>
+
+      <!-- we print the cart quantity to the console because there is no operation to display the cart quantity on the page. -->
+      <button
+        onclick="
+        console.log(`Cart quantity: ${cartQuantity}`);
+        ">Show Quantity
+      </button>
+
+      <button
+        onclick="
+        updateCartQuantity(1);"
+        >Add to Cart
+      </button>
+
+      <button
+        onclick="
+        updateCartQuantity(2);"
+        >+2
+      </button>
+
+      <button
+        onclick="
+        updateCartQuantity(3);"
+        >+3
+      </button>
+
+      <button
+        onclick="
+        cartQuantity = 0;
+        console.log(`Cart quantity was reset: ${cartQuantity}`);
+        displayQuantity();
+        ">Reset Cart
+      </button>
+    </div>
+
+    <script>
+      let cartQuantity = 0;
+
+      function displayQuantity() {
+        document.getElementById(
+          'display'
+        ).innerText = `Cart quantity: ${cartQuantity}`;
+      }
+
+      function updateCartQuantity(change) {
+        if (cartQuantity + change < 0) {
+          alert('Not enough items in the cart');
+          return; // Early return
+        }
+
+        cartQuantity += change;
+        console.log(`Cart quantity: ${cartQuantity}`);
+        displayQuantity();
+      }
+    </script>
+  </body>
+</html>
