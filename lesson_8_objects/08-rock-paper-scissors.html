@@ -34,8 +34,13 @@
 
     <script>
         //this will store the score of the game and update it after each round
-        let score = JSON.parse(localStorage.getItem("score"))
+        let score = JSON.parse(localStorage.getItem("score")) || {
+            wins: 0,
+            losses: 0,
+            ties: 0
+        };
 
+        /* just reference, the above code is equivalent to the following code:
         if(!score) {
             score = {
                 wins: 0,
@@ -43,6 +48,7 @@
                 ties: 0
             }
         }
+        */
 
         function playGame(playerMove){
             const computerMove = pickComputerMove();
