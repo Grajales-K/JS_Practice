@@ -9,111 +9,130 @@
   <body>
     <script>
 
-         console.log(" ======================= objects ========================= ");
+      console.log(" ======================= objects ========================= ");
 
-        const products ={
-            name: "socks",
-            price: 1098
-        };
-        
-        //to print what type of data type is products
-        console.log(typeof products);
-        console.log(products.name);
+      const products ={
+          name: "socks",
+          price: 1098
+      };
+      
+      //to print what type of data type is products
+      console.log(typeof products);
+      console.log(products.name);
 
-        //object is products and property is price  ==>  property value-pair
-        console.log(products.price);
+      //object is products and property is price  ==>  property value-pair
+      console.log(products.price);
 
-        products.name = "cotton socks";
-        console.log(products.name);
+      products.name = "cotton socks";
+      console.log(products.name);
 
-        products.newProperty = true;
-        console.log(products);
+      products.newProperty = true;
+      console.log(products);
 
-        // removing one property from the object
-        delete products.newProperty;
-        console.log(products);
+      // removing one property from the object
+      delete products.newProperty;
+      console.log(products);
 
 
-        console.log(" ======================= accessing object properties ========================= ");
+      console.log(" ======================= accessing object properties ========================= ");
 
-        const product2 = {
-          name: "shirt",
-          price: 1999,
-          //if we have complex property name we can use quotes
-          'delivery-time': "2 days",
+      const product2 = {
+        name: "shirt",
+        price: 1999,
+        //if we have complex property name we can use quotes
+        'delivery-time': "2 days",
 
-          ['delivery-week']: "1 week",
+        ['delivery-week']: "1 week",
 
-          rating: {
-            starts: 4.5,
-            count: 87,
-          },
-          fun: function() {
-            console.log("this is a function inside an object");
-          }
+        rating: {
+          starts: 4.5,
+          count: 87,
+        },
+        fun: function() {
+          console.log("this is a function inside an object");
         }
+      }
 
-        console.log(product2.name);
-        console.log(product2["price"]);
+      console.log(product2.name);
+      console.log(product2["price"]);
 
-        //to access the complex property name we can use bracket notation
-        console.log(product2['delivery-time']);
+      //to access the complex property name we can use bracket notation
+      console.log(product2['delivery-time']);
 
-        console.log(product2['delivery-week']);
+      console.log(product2['delivery-week']);
 
-        console.log(product2.rating.starts);
+      console.log(product2.rating.starts);
 
-        product2.fun();
+      product2.fun();
 
-        console.log(typeof console.log);
-        
+      console.log(typeof console.log);
+      
 
-        console.log(" ======================= built in Objects ========================= ");
+      console.log(" ======================= built in Objects ========================= ");
 
-        //converting object into JSON string
-        console.log(JSON.stringify(product2))
+      //converting object into JSON string
+      console.log(JSON.stringify(product2))
 
-        const jsonString = JSON.stringify(product2);
-        console.log(JSON.parse(jsonString))
-
-
-        console.log(" ======================= object Methods (auto-boxing)========================= ");
-
-        console.log('hello'.length);
-        console.log('hello'.toUpperCase());
+      const jsonString = JSON.stringify(product2);
+      console.log(JSON.parse(jsonString))
 
 
-        //copy by reference is used to copy objects, so if we change the value of object2 it will also change the value of object1
-        const object1 = {
-          message: "hello",
-        };
+      console.log(" ======================= object Methods (auto-boxing)========================= ");
 
-        //DESTRUCTURING, easier way to take properties out of and object and assign them to variables
+      console.log('hello'.length);
+      console.log('hello'.toUpperCase());
 
-        const object2 = object1
 
-        object1.message = "Good job";
-        console.log(object1)//new message
-        console.log(object2)//same message
+      //copy by reference is used to copy objects, so if we change the value of object2 it will also change the value of object1
+      const object1 = {
+        message: "hello",
+      };
 
-        const object3 = {
-          message: "Good job",
-        };
+      //DESTRUCTURING, easier way to take properties out of and object and assign them to variables
 
-        console.log(object1 === object3) //false because they are different objects
+      const object2 = object1
 
-        console.log( object2 === object1) //true because they are the same object
+      object1.message = "Good job";
+      console.log(object1)//new message
+      console.log(object2)//same message
 
-        const object4 = {
-          message: "Good job",
-          price: 799
-        };
+      const object3 = {
+        message: "Good job",
+      };
 
-        // const message = object4.message
+      console.log(object1 === object3) //false because they are different objects
 
+      console.log( object2 === object1) //true because they are the same object
+
+      const object4 = {
+        message: "Good job",
+        price: 799
+      };
+
+      // const message = object4.message
+
+      //shortcut to access the property of an object
+      const { message, price } = object4;
+      console.log(message, price);
+
+      console.log(" ======================= object property shorthand Method ========================= ");
+
+      const object5 ={ 
         //shortcut to access the property of an object
-        const { message, price } = object4;
-        console.log(message, price);
+        // message: message
+        message,
+        number: 123,
+        // method: function function1(){
+        //   console.log("this is a method inside an object")
+        // }
+
+        // shorcut
+        metnod(){
+          console.log('method')
+        }
+      }
+
+      console.log(object5)
 
 
  
