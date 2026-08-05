@@ -27,16 +27,21 @@
             score.wins = 0;
             score.losses = 0;   
             score.ties = 0;
+            localStorage.removeItem('score');
         ">Reset</button>
 
     </div>
 
     <script>
         //this will store the score of the game and update it after each round
-        const score = {
-            wins: 0,
-            losses: 0,
-            ties: 0
+        let score = JSON.parse(localStorage.getItem("score"))
+
+        if(!score) {
+            score = {
+                wins: 0,
+                losses: 0,
+                ties: 0
+            }
         }
 
         function playGame(playerMove){
@@ -72,6 +77,8 @@
                 };
             }
 
+            // temporal scores, if you refresh the page the scores will start again
+
             //we use the assignment operator to update the score object based on the result of the game
             if(result === 'You Win.') {
                 score.wins += 1;
@@ -81,6 +88,11 @@
                 score.ties += 1;
 
             }
+
+            // to avoid this scores being lost when the page is refreshed, we can use local storage to store the scores in the browser's memory. This way, even if the page is refreshed, the scores will be preserved and can be retrieved later.
+            localStorage.setItem('score', JSON.stringify(score));
+
+
 
             // return result;
             // the pop up can display multi line information using template literals
