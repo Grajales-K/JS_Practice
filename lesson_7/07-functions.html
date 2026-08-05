@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <h1>holaaa</h1>
+    <h1>Hello</h1>
     <script>
         // this lines of code is just practise how the function works, and how to call it, and how to use it in a real life example.
 
@@ -23,11 +23,11 @@
 
         //parameters and arguments
 
-        function calculateTax(costParameter, taxPorcentage = 0.1) {
-            console.log(costParameter * taxPorcentage);
+        function calculateTax(cost, percentage = 0.1) {
+            console.log(cost * percentage);
         }
 
-        calculateTax(2000, 0,2);
+        calculateTax(2000, 0.2); //we expect 400
         calculateTax(5000);
     </script>
 </body>
