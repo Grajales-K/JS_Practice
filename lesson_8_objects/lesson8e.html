@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 8 - Objects</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Welcome to Lesson 8 - Objects</h1>
+    <script>
+        //Create a function 'isSameProduct(product1, product2), which returns true if 2 products have the same value inside ('name' and 'price') and false otherwise. Create 2 products and try out the function.
+
+        const product1 = {
+                name: "basketball",
+                price: 3090
+            };
+
+        const product2 = {
+            name: "soccer ball",
+            price: 2090
+        };
+
+        //this is the same because we are assigning the reference of product1 to product3, so they point to the same object in memory
+        const product3 = product1;
+
+        function isSameProduct(product1, product2){
+            if(product1.name === product2.name && product1.price === product2.price){
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        console.log(isSameProduct(product1, product2)); // false
+
+        console.log(isSameProduct(product1, product3)); // true
+
+        // 8f. Using google or A.I tool, search how to convert a string to all lowercase with JS. "Good morning  => good morning".
+
+        const str = "Good morning";
+
+        const strLowerCase = str.toLowerCase();
+
+        console.log(strLowerCase); // good morning
+
+
+        // 8g. Search how to repeat a string many times ('test 2 times > testtest').
+
+        const stringToRepeat = "test";
+
+        console.log(stringToRepeat.repeat(2)); // testtest
+
+    </script>
+</body>
+</html>
