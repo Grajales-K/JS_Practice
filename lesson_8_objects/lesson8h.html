@@ -77,6 +77,7 @@
             // Only use eval() for learning purposes.
             calculation = eval(calculation);
             displayCalculation();
+            localStorage.setItem('calculation', calculation);
           ">
             =
         </button>
@@ -88,6 +89,7 @@
         <button onclick="
             calculation = '';
             displayCalculation();
+            localStorage.removeItem('calculation');
           ">
             Clear
         </button>
@@ -95,22 +97,26 @@
 
     <script>
         // 8h. We'll add localStorage to the calculator project. First, make a copy of the project.
-        // whenever we uptadte the calculation, save it using .setItem().
+        //1. whenever we uptadte the calculation, save it using .setItem().
 
-        // When the page first loads get the alculation using .getItem()
+        //2. When the page first loads get the alculation using .getItem()
 
-        // Use a default value of "if a calculation does't exist in the localStorage."
+        //3. Use a default value of "if a calculation does't exist in the localStorage."
 
         // ================
 
-        
+        //now we will use localStorage to save the calculation so that it persists even after refreshing the page.
+        let calculation = localStorage.getItem('calculation') || '';
+        // let calculation = '';
 
-        let calculation = '';
+        displayCalculation();
+        console.log(`calculation memory: ${calculation}`);
 
         // Display the current calculation in the display id concatenating the new value to the existing calculation
         function updateCalculation(value) {
             calculation += value;
             displayCalculation();
+            localStorage.setItem('calculation', calculation);
         }
 
         function displayCalculation() {
