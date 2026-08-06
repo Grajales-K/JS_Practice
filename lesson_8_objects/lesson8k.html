@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 8 - Objects</title>
+
+</head>
+<body>
+    <header>
+        <h1>Coin-Flip game practice</h1>
+    </header>
+    <p>Open the console to check the results</p>
+    
+    <div>
+        <button onclick ="
+                updateGuess('heads')
+
+            " >Head</button>
+
+        <button onclick="
+                updateGuess('tails')
+              ">
+            Clear
+        </button>
+    </div>
+        
+    <script>
+
+        let guess;
+
+        function updateGuess(guess){
+
+            const randomNumber = Math.random();
+
+            const result = randomNumber < 0.5 ? 'heads' : 'tails';
+
+            if (guess === result) {
+                console.log("You win!");
+            } else {
+                console.log("You lose!");
+            }
+        }
+
+    </script>
+</body>
+</html>
+
+
