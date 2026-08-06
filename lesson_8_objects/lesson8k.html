@@ -38,27 +38,47 @@
 
         let guess;
 
-        let score = {
+        // 8j. Create a score object { wins: 0 losses: 0 } update the score each time after playing, and display the score in the console.
+
+        // step 1, we need to use parse to save and read the score in localStorage, and if there is no score in localStorage, we need to create a new score object with wins and losses set to 0.
+        let score =  JSON.parse(localStorage.getItem("scorre")) || {
             wins: 0,
             losses: 0
 
         }
 
+        showScoreInConsole();
+
+
         function updateGuess(guess){
 
             const randomNumber = Math.random();
-
             const result = randomNumber < 0.5 ? 'heads' : 'tails';
 
             if (guess === result) {
                 score.wins++;
-                console.log(`You win!, ${score.wins}  times`);
+                console.log(`computer picked: &{result}, you picked: ${guess}`);
             } else {
                 score.losses++;
-                console.log(`You lose!,  ${score.losses}  times`);
+                console.log(`computer picked: ${result}, you picked: ${guess}`);
             }
+
+            // 8.k Use localStorage to save and load the score (hint: you'll need to use JSON.stringify() and to connvert the score object to a string)
+
+            // step 2, we need to use stringify to save the score object in localStorage.
+            localStorage.setItem("score", JSON.stringify(score));
+
+            // step 3, we need to show the score in the console after each game.
+            showScoreinConsole();
+
+
         }
 
+
+        function showScoreInConsole(resultMessage) {
+            console.log(`Score: Wins: ${score.wins}, Losses: ${score.losses}`);
+
+        }
     </script>
 </body>
 </html>
