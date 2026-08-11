@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+
+<body>
+
+    <p>This is a simple HTML template.</p>
+    <button>Hello</button>
+    <button>World</button>
+
+
+
+
+    <script>
+        /*
+        document.body.innerHTML = "Hello, Wordl!";
+        document.title = "Good job!";
+        */
+
+        console.log(document.title);
+        document.title = "Changed";
+
+        console.log(document.body.innerHTML);
+        document.body.innerHTML = '<button>Click me</button>';
+
+        // ========= Documento query selector =======
+
+
+        console.log(document.querySelector('button').innerHTML);
+        document.querySelector('button').innerHTML = "Click me ";
+    </script>
+</body>
+
+</html>
