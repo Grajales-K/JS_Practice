@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Projects</title>
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to My DOM Project</h1>
+    </header>
+
+    <p>Youtube Subscribe button</p>
+    <button onlclick="
+        subscribe();
+
+    " class="js-subscribe-btn">Subscribe
+    </button>
+
+    <scritp>
+        function subscribe(){
+        const btnElement =
+        documemt.querySelector('.js-subscribe-btn');
+
+        if (btnElement === 'Subscribe'){
+        btnElement.innerHTML = 'Subscribed';
+        } else {
+        btnElement.innerHTML = 'Subscribe';
+
+        }
+
+        }
+    </scritp>
+
+
+    <footer>
+        <p>&copy; 2023 Your Name</p>
+    </footer>
+</body>
+
+</html>
