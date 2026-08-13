@@ -25,8 +25,10 @@
     <p>Amazon Shipping Calculator</p>
     <input class="js-cost-input" 
         placeholder="cost of order" 
-        onkeydown="console.log(event.key);
+        onkeydown="
+            handleCostKeyDown(event);
     ">
+
     <button onclick="
         calculateTotal();
         ">Calculate
@@ -38,31 +40,38 @@
 
 
     <script>
-    // ============== calculator ===========
-
-    function calculateTotal(){
-        const inputElement = document.querySelector('.js-cost-input');
-        let cost = Number(inputElement.value);
-
-        if(cost < 40){
-            cost = cost + 10
+        // ====== function to handle keydown event on the input field and trigger the calculation ======
+        function handleCostKeyDown(event){
+            if(event.key === 'Enter'){
+                calculateTotal();
+            }
         }
 
-        document.querySelector('.js-total-cost')
-            .innerHTML = `$ ${cost}`
-    }
+        // ============== calculator ===========
+
+        function calculateTotal(){
+            const inputElement = document.querySelector('.js-cost-input');
+            let cost = Number(inputElement.value);
+
+            if(cost < 40){
+                cost = cost + 10
+            }
+
+            document.querySelector('.js-total-cost')
+                .innerHTML = `$ ${cost}`
+        }
 
 
-    // ============== subscribe  button ===========
-    function subscribe() {
-        const btnElement = document.querySelector('.js-subscribe-btn');
+        // ============== subscribe  button ===========
+        function subscribe() {
+            const btnElement = document.querySelector('.js-subscribe-btn');
 
-        if(btnElement.innerText === 'Subscribe'){
-            btnElement.innerHTML = 'Subscribed';
-        } else {
-            btnElement.innerHTML = 'Subscribe';
+            if(btnElement.innerText === 'Subscribe'){
+                btnElement.innerHTML = 'Subscribed';
+            } else {
+                btnElement.innerHTML = 'Subscribe';
+            };
         };
-    };
 
     </script>
 
