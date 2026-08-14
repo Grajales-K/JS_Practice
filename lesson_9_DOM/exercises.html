@@ -4,14 +4,106 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lesson9 Exercises</title>
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f4f6f8;
+            color: #333;
+            text-align: center;
+        }
+
+        div {
+            margin: 2rem;
+        }
+
+    
+        button {
+            padding: 8px 16px;
+            font-size: 14px;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+            background-color: #6a4af9;
+            color: white;
+            margin-right: 8px;
+            transition: background 0.2s;
+        }
+
+        button:hover {
+            background-color: #ac61ef;
+        }
+
+        .card-container {
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            max-width: 300px;
+        }
+
+        .btn-heads {
+            background-color: #3b82f6;
+            color: white;
+        }
+
+        .btn-heads:hover {
+            background-color: #2563eb;
+        }
+
+        .btn-tails {
+            background-color: #35f1b3;
+            color: white;
+        }
+
+        .btn-tails:hover {
+            background-color: #059669;
+        }
+
+        .selection {
+            font-weight: bold;
+            font-size: 16px;
+            color: #1f2937;
+            margin-top: 15px;
+        }
+    </style>
 </head>
 <body>
+    <div class="card-container">
+        <!-- //create a <button>9a</button>, use document.querySelector(button), to get the button from the page, and tehn display it in the console. -->
+        <button class="btn_9a">9a</button>
 
-    <!-- //create a <button>9a</button>, use document.querySelector(button), to get the button from the page, and tehn display it in the console. -->
-    <button class="btn_9a">
-    9a</button>
+        <button class="btn_9b">9b</button>
+    </div>
 
-    <button class="btn_9b">9b</button>
+    
+    <div class="card-container">
+    <!-- 9c. Create 2 button "heads" and "tails", and a paragraph (<p></p>) understand. When clicking the 'heads' button, display "You choose: heads" in the the paragraph. when the 'tails' button, display "You choose: tails" -->
+        <button class="btn-heads" onclick="
+            updateSelection('Heads')
+            ">  
+            Heads
+        </button>
+
+        <button class="btn-tails" onclick="
+            updateSelection('Tails')
+            ">  
+            Tails
+        </button>
+
+        <p class="selection">
+
+        </p>
+    </div>
+
+    <div class="userInput"
+    
+    >
+
+    </div>
 
 
     <script>
@@ -26,8 +118,15 @@
         console.log(secondBtn);
 
 
+        // 9c
+        function updateSelection(choice){
 
+            // Select the element using its class name '.selection'
+            const selectionParagraph = document.querySelector('.selection');
 
+            // Update the text directly using the choice argument
+            selectionParagraph.innerText = `You choose: ${choice.toLowerCase()}`;
+        }
 
     </script>
 </body>
