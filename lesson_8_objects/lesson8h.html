@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 8 - Calculator</title>
+
+    <style>
+        body {
+            font-size: 28px;
+            font-weight: bold;
+            text-align: center;
+        }
+    
+        #display {
+            min-height: 30px;
+            font-size: 28px;
+            font-weight: bold;
+        }
+    
+        .title {
+            margin: 20px 0px;
+            font-size: 40px;
+            font-weight: bold;
+            color: #040479;
+    
+        }
+    
+        button {
+            margin: 10px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            width: 5rem;
+            height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Welcome to Lesson 8h - Objects/LocalStorage</h1>
+    <p class="title">Calculator</p>
+
+    <!-- Display the current calculation in the display id -->
+    <p id="display"></p>
+
+
+    <div>
+        <button onclick="updateCalculation('1');">1</button>
+        <button onclick="updateCalculation('2');">2</button>
+        <button onclick="updateCalculation('3');">3</button>
+        <button onclick="updateCalculation('+');">+</button>
+    </div>
+
+    <div>
+        <button onclick="updateCalculation('4');">4</button>
+        <button onclick="updateCalculation('5');">5</button>
+        <button onclick="updateCalculation('6');">6</button>
+        <button onclick="updateCalculation('-');">-</button>
+    </div>
+
+    <div>
+        <button onclick="updateCalculation('7');">7</button>
+        <button onclick="updateCalculation('8');">8</button>
+        <button onclick="updateCalculation('9');">9</button>
+        <button onclick="updateCalculation('*');">*</button>
+    </div>
+
+    <div>
+        <button onclick="updateCalculation('0');">0</button>
+        <button onclick="updateCalculation('.');">.</button>
+
+        <button onclick="
+            // Note: eval() takes a string and runs it as code.
+            // Avoid using eval() in real world projects since
+            // it can potentially be given harmful code to run.
+            // Only use eval() for learning purposes.
+            calculation = eval(calculation);
+            displayCalculation();
+            localStorage.setItem('calculation', calculation);
+          ">
+            =
+        </button>
+
+        <button onclick="updateCalculation('/');">/</button>
+    </div>
+
+    <div>
+        <button onclick="
+            calculation = '';
+            displayCalculation();
+            localStorage.removeItem('calculation');
+          ">
+            Clear
+        </button>
+    </div>
+
+    <script>
+        // 8h. We'll add localStorage to the calculator project. First, make a copy of the project.
+        //1. whenever we uptadte the calculation, save it using .setItem().
+
+        //2. When the page first loads get the alculation using .getItem()
+
+        //3. Use a default value of "if a calculation does't exist in the localStorage."
+
+        // ================
+
+        //now we will use localStorage to save the calculation so that it persists even after refreshing the page.
+        let calculation = localStorage.getItem('calculation') || '';
+        // let calculation = '';
+
+        displayCalculation();
+        console.log(`calculation memory: ${calculation}`);
+
+        // Display the current calculation in the display id concatenating the new value to the existing calculation
+        function updateCalculation(value) {
+            calculation += value;
+            displayCalculation();
+            localStorage.setItem('calculation', calculation);
+        }
+
+        function displayCalculation() {
+            document.getElementById('display').innerText = calculation;
+            console.log(calculation);
+        }
+    </script>
+</body>
+
+</html>
