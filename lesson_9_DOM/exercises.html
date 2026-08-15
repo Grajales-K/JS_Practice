@@ -99,14 +99,34 @@
         </p>
     </div>
 
-    <div class="userInput"
-    
-    >
+    <!-- 
+     9d. Create a text box, <input> and submit button. When clicking 'submit', display 'your name is ${name}' on the page extracting the text from the text box. Hint: use .value to get the text inside of the input. -->
+    <div class="card-container">
+        <div>
+            <input
+                id="userText" 
+                type="text" 
+                placeholder="write your Name"
+                onkeydown="
+                    handleKeyDown(event);
+                "/>
 
+            <input 
+                type="submit" 
+                value="Submit"
+                onclick=" displayName();" 
+            />
+        </div>
+
+        <p class="userName">
+
+        </p>
     </div>
 
 
     <script>
+
+
         // 9a
         const firstbtn = document.querySelector('.btn_9a');
         console.log(firstbtn);
@@ -127,6 +147,28 @@
             // Update the text directly using the choice argument
             selectionParagraph.innerText = `You choose: ${choice.toLowerCase()}`;
         }
+
+
+        // 9d
+        function displayName(){
+            const InputText = document.querySelector('#userText')
+            const name = InputText.value;
+
+            const displayNameParagraph = document.querySelector('.userName')
+
+            displayNameParagraph.innerText = `Your name is: ${name}`;
+        }
+
+        // 9e
+        // Call displayName() when the user presses Enter
+            function handleKeyDown(event) {
+                if (event.key === 'Enter') {
+                    displayName();
+                }
+            }
+
+        
+
 
     </script>
 </body>
