@@ -42,7 +42,7 @@
             border: 2px solid #e2e8f0;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            max-width: 300px;
+            max-width: 400px;
         }
 
         .btn-heads {
@@ -68,20 +68,38 @@
             font-size: 16px;
             color: #1f2937;
             margin-top: 15px;
+            }
+
+        #userText {
+            width: 170px;      
+            padding: 8px 12px;
+            margin-bottom: 10px; 
+        }
+
+        .userName {
+            font-weight: bold;
+            font-size: 16px;
+            color: #1f2937;
+            margin-top: 15px;
         }
     </style>
 </head>
 <body>
+    
+
+    <!-- //create a <button>9a</button>, use document.querySelector(button), to get the button from the page, and tehn display it in the console. -->
     <div class="card-container">
-        <!-- //create a <button>9a</button>, use document.querySelector(button), to get the button from the page, and tehn display it in the console. -->
+        <p>Selecting DOM elements and modifying their text dynamically.</p>
         <button class="btn_9a">9a</button>
 
         <button class="btn_9b">9b</button>
     </div>
 
     
-    <div class="card-container">
     <!-- 9c. Create 2 button "heads" and "tails", and a paragraph (<p></p>) understand. When clicking the 'heads' button, display "You choose: heads" in the the paragraph. when the 'tails' button, display "You choose: tails" -->
+    <div class="card-container">
+        <p>Reusing a single function by passing parameters/arguments.</p>
+
         <button class="btn-heads" onclick="
             updateSelection('Heads')
             ">  
@@ -102,6 +120,7 @@
     <!-- 
      9d. Create a text box, <input> and submit button. When clicking 'submit', display 'your name is ${name}' on the page extracting the text from the text box. Hint: use .value to get the text inside of the input. -->
     <div class="card-container">
+        <p>Reading input values, string formatting, and keyboard events.</p>
         <div>
             <input
                 id="userText" 
@@ -111,11 +130,10 @@
                     handleKeyDown(event);
                 "/>
 
-            <input 
-                type="submit" 
-                value="Submit"
-                onclick=" displayName();" 
-            />
+            <button class="btn-heads"
+                type="button"
+                onclick=" displayName();">
+            Submit</button>
         </div>
 
         <p class="userName">
@@ -125,8 +143,6 @@
 
 
     <script>
-
-
         // 9a
         const firstbtn = document.querySelector('.btn_9a');
         console.log(firstbtn);
@@ -156,19 +172,18 @@
 
             const displayNameParagraph = document.querySelector('.userName')
 
-            displayNameParagraph.innerText = `Your name is: ${name}`;
+            const CapitalizeName = name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
+
+            displayNameParagraph.innerText = `Your name is: ${CapitalizeName}`;
         }
 
-        // 9e
+        // 9e - 9f
         // Call displayName() when the user presses Enter
-            function handleKeyDown(event) {
-                if (event.key === 'Enter') {
-                    displayName();
-                }
+        function handleKeyDown(event) {
+            if (event.key === 'Enter') {
+                displayName();
             }
-
-        
-
+        }
 
     </script>
 </body>
