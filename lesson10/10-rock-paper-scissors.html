@@ -17,28 +17,54 @@
             font-weight: bold;
         }
 
+        .move-button {
+            background-color: transparent;
+            border: 3px solid white;
+            width: 100px;
+            height: 100px;
+            border-radius: 60px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        .move-icon {
+            height: 50px;
+        }
+
+        .result {
+            font-size: 25px;
+            font-weight: bold;
+            margin-top: 50px;
+
+        }
     </style>
 </head>
 
 <body>
     <div class="nav">
-        <p class="title" >Rock Paper Scissors</p>
+        <p class="title">Rock Paper Scissors</p>
 
         <button onclick="
             playGame('rock');
-        "><img src="/img-exercises/lesson10/rock-emoji.png"></button>
+            " class='move-button'>
+            <img src="/img-exercises/lesson10/rock-emoji.png" class="move-icon"></button>
 
         <button onclick="
             playGame('paper');
-        ">Scissors</button>
+            " class="move-button">
+            <img src="/img-exercises/lesson10/paper-emoji.png" class="move-icon"></button>
 
         <button onclick="
             playGame('scissors');
-        ">Scissors</button>
+            " class="move-button">
+            <img src="/img-exercises/lesson10/scissors-emoji.png" class="move-icon"></button>
 
 
-        <p class="js-result"></p>
-        <p class="js-moves"></p>
+        <p class="js-result result">You Win</p>
+        <p class="js-moves">
+            You
+            <img src="/img-exercises/lesson10/rock-emoji.png" class="move-icon">
+        </p>
         <p class="js-score"></p>
 
         <button onclick="
