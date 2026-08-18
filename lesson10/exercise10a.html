@@ -1,34 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Css</title>
-    <link rel="stylesheet" href="styles/exercise10a.css">
-</head>
-<body>
-
+    <link rel="stylesheet" href="styles/exercise10a.css" />
+  </head>
+  <body>
     <!-- 10a. Create two button following the style in the img. -->
     <div class="box">
-        <p>Amazon Button</p>
-        <button class="btn-1">Add to Cart</button>
+      <p>Amazon Button</p>
+      <button class="btn-1">Add to Cart</button>
     </div>
 
     <!-- 10b -->
     <div class="box">
-        <p>Uber buttons</p>
-        <button class="btn-2">Request now</button>
-        <button class="btn-3">Schedule for later</button>
+      <p>Uber buttons</p>
+      <button class="btn-2">Request now</button>
+      <button class="btn-3">Schedule for later</button>
     </div>
 
-    <!-- 10d. create a button. when clicling this button, it should turn ON//OFF. Hints, use a 'is-toggled' and use it to change the styling. Use if (clasList.contains('is-toggled')) to decide whether to turn ON or OFF. -->
+<!-- 
+    10d. create a button. when clicling this button, it should turn ON//OFF. Hints, use a 'is-toggled' and use it to change the styling. Use if (clasList.contains('is-toggled')) to decide whether to turn ON or OFF. 
+
+    10e. & 10g create 3 buttons switch on and off.
+    10f. separate each language into its onw file. -->
     <div class="box">
-        <p>Toggle button</p>
-        <button onclick=" toggle(this)" class="toggled-off" >Gaming</button>
-        <button onclick=" toggle(this)" class="toggled-off">Music</button>
-        <button onclick=" toggle(this)" class="toggled-off">Tech</button>
+      <p>Toggle button</p>
+      <button onclick=" toggle(this)" class="toggled-off">Gaming</button>
+      <button onclick=" toggle(this)" class="toggled-off">Music</button>
+      <button onclick=" toggle(this)" class="toggled-off">Tech</button>
+    </div>
+
+    <!-- ======== 10h Amazon Calculator ======== -->
+
+    <!-- copy the code from amazon calculator if we type a number less than 0, display a red error message below the texto code. " Error cost cannot be less that $0" -->
+
+    <div class="box">
+        <p>Amazon Shipping Calculator</p>
+        <input
+            class="js-cost-input cost-input"
+            placeholder="cost of order"
+            onkeydown="
+            handleCostKeyDown(event); " />
+
+        <button onclick="
+            calculateTotal();  
+            " class="calculate-btn" >
+            Calculate
+        </button>
+
+        <p class="js-total-cost"></p>
+        <script src="scripts/exercise10a.js"></script>
 
     </div>
-    <script src="scripts/exercise10a.js"></script>
-</body>
+  </body>
 </html>

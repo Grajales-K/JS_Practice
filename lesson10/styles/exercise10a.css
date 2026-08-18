@@ -22,7 +22,7 @@ body {
 
 .box p {
   margin-top: 0;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   font-size: 18px;
   font-weight: bold;
   color: #333333;
@@ -52,8 +52,6 @@ body {
   margin-right: 15px;
 }
 
-
-
 .toggled-off,
 .btn-3 {
   background-color: rgb(232, 229, 229);
@@ -65,4 +63,34 @@ body {
   border-radius: 5px;
   padding: 10px 30px;
   margin-right: 15px;
+}
+
+/*======== amazon shipping calculator ==========*/
+
+.cost-input {
+  font-size: 16px;
+  padding: 10px;
+}
+
+.calculate-btn {
+  background-color: green;
+  color: white;
+  border: none;
+  font-size: 16px;
+  padding: 12px 15px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.box .js-total-cost {
+  font-size: 20px; 
+  font-weight: bold;
+  color: #333333;
+  margin-top: 20px;
+}
+
+.box .error-message {
+  color: red;
+  font-size: 16px;
+  font-weight: bold;
 }
