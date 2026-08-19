@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Projects</title>
+    <style>
+        
+        .body {
+            font-family: Arial;
+        }
+
+        .subscribe-button{
+            border: none;
+            background-color: black;
+            color: white;
+            padding: 15px;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-bottom: 30px;
+
+        }
+
+
+        /* this is one way to make hoovering effect, creating a class from dom when the event is happe ning, and then adding the class to the element, and then removing it when the event is not happening 
+        anymore. 
+
+        rgb means: red, green, blue. The values are from 0 to 255. 0 means no color, 255 means full color. */
+        .is-subscribed {
+            background-color: rgb(240, 240, 240);
+            font-weight: bold;
+            color: black;
+        }
+
+        .cost-input {
+            font-size: 16px;
+            padding: 10px;
+        }
+
+        .calculate-btn {
+            background-color: green;
+            color: white;
+            border: none;
+            font-size: 16px;
+            padding: 12px 15px;
+            cursor: pointer;
+
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to My DOM Project</h1>
+    </header>
+
+    <p>YouTube Subscribe button</p>
+
+    <button onclick="
+        subscribe()
+    " class="js-subscribe-btn subscribe-button">
+        Subscribe 
+    </button>
+
+    <!-- ======== Amazon Calculator ======== -->
+
+    <p>Amazon Shipping Calculator</p>
+    <input class="js-cost-input cost-input" placeholder="cost of order" onkeydown="
+            handleCostKeyDown(event);
+    ">
+
+    <button onclick="
+        calculateTotal();
+        " class="calculate-btn
+        ">Calculate
+    </button>
+
+    <p class="js-total-cost"></p>
+
+    <!-- //control mas espacio cierra las etiquetas -->
+
+
+    <script>
+        // ====== function to handle keydown event on the input field and trigger the calculation ======
+        function handleCostKeyDown(event) {
+            if (event.key === 'Enter') {
+                calculateTotal();
+            }
+        }
+
+        // ============== calculator ===========
+
+        function calculateTotal() {
+            const inputElement = document.querySelector('.js-cost-input');
+            let cost = Number(inputElement.value);
+
+            if (cost < 40) {
+                cost = cost + 10
+            }
+
+            document.querySelector('.js-total-cost')
+                .innerHTML = `$ ${cost}`
+        }
+
+
+        // ============== subscribe  button ===========
+        function subscribe() {
+            const btnElement = document.querySelector('.js-subscribe-btn');
+
+            if (btnElement.innerText === 'Subscribe') {
+                btnElement.innerHTML = 'Subscribed';
+                btnElement.classList.add('is-subscribed');
+            } else {
+                btnElement.innerHTML = 'Subscribe';
+                btnElement.classList.remove('is-subscribed');
+            };
+        };
+
+    </script>
+
+
+    <footer>
+        <p>&copy; 2023 Your Name</p>
+    </footer>
+</body>
+
+</html>
