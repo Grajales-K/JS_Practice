@@ -5,61 +5,35 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculator refactor</title>
-    <style>
-        body {
-            font-size: 28px;
-            font-weight: bold;
-            text-align: center;
-        }
-
-        #display {
-            min-height: 30px;
-            font-size: 28px;
-            font-weight: bold;
-        }
-
-        .title {
-            margin: 20px 0px;
-            font-size: 40px;
-            font-weight: bold;
-            color: #040479;
-
-        }
-
-        button {
-            font-size: 28px;
-            font-weight: bold;
-            width: 7%;
-            height: 50px;
-        }
-    </style>
+    <link rel="stylesheet" href="./styles/calculator.css" />
 </head>
 
 <body>
+    <h1 class="title">Calculator</h1>
     <p id="display"></p>
 
-    <p>
+    <div>
         <button onclick="updateCalculation('1');">1</button>
         <button onclick="updateCalculation('2');">2</button>
         <button onclick="updateCalculation('3');">3</button>
-        <button onclick="updateCalculation('+');">+</button>
-    </p>
+        <button onclick="updateCalculation('+');" class="btn-calculation">+</button>
+    </div>
 
-    <p>
+    <div>
         <button onclick="updateCalculation('4');">4</button>
         <button onclick="updateCalculation('5');">5</button>
         <button onclick="updateCalculation('6');">6</button>
-        <button onclick="updateCalculation('-');">-</button>
-    </p>
+        <button onclick="updateCalculation('-');" class="btn-calculation">-</button>
+    </div>
 
-    <p>
+    <div>
         <button onclick="updateCalculation('7');">7</button>
         <button onclick="updateCalculation('8');">8</button>
         <button onclick="updateCalculation('9');">9</button>
-        <button onclick="updateCalculation('*');">*</button>
-    </p>
+        <button onclick="updateCalculation('*');" class="btn-calculation">*</button>
+    </div>
 
-    <p>
+    <div> 
         <button onclick="updateCalculation('0');">0</button>
         <button onclick="updateCalculation('.');">.</button>
 
@@ -70,36 +44,23 @@
         // Only use eval() for learning purposes.
         calculation = eval(calculation);
         displayCalculation();
-      ">
+        ">
             =
         </button>
 
-        <button onclick="updateCalculation('/');">/</button>
-    </p>
+        <button onclick="updateCalculation('/');" class="btn-calculation">/</button>
+    </div>
 
-    <p>
+    <div>
         <button onclick="
         calculation = '';
         displayCalculation();
-      ">
+        " class="btn-clear" >
             Clear
         </button>
-    </p>
+    </div>
 
-    <script>
-        let calculation = '';
-
-        // Display the current calculation in the display id concatenating the new value to the existing calculation
-        function updateCalculation(value) {
-            calculation += value;
-            displayCalculation();
-        }
-
-        function displayCalculation() {
-            document.getElementById('display').innerText = calculation;
-            console.log(calculation);
-        }
-    </script>
+    <script src="./scripts/calculator.js"> </script>
 </body>
 
 </html>
