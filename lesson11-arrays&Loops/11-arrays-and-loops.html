@@ -47,10 +47,41 @@
 
         console.log(randomNumer);
 
+        console.log(" =========== looping through an array ========") 
 
+        const todoList = [
+            'make dinner',
+            'wash dishes',
+            'watch youtube'
+        ]
 
+        for (let index = 0; index < todoList.length -1; index++){
+            const value = todoList[index]
+            console.log(value)
+        }
 
+        console.log(" =========== accumulator Pattern ========")
+         
+        // create a variable to store the resutl
 
+        const numbers = [1, 2, 3, 4, 5];
+        let total = 0;
+
+        for (let i = 0; i < numbers.length; i++){
+            const num = numbers[i];
+            total += num;
+        }
+
+        console.log(total);
+ 
+        const numsDoubled = [];
+
+        for (let i = 0; i < numbers.length; i++){
+           const nums = numbers[i];
+           numsDoubled.push(nums * 2); 
+        }
+
+        console.log(numsDoubled);
     </script>
 </body>
 
