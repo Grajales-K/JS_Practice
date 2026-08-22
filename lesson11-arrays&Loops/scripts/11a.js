@@ -13,3 +13,12 @@ document.querySelector('.numbers').innerHTML = `
     <p><strong>original Array:</strong> [${originalArr}]</p>
     <p><strong>new Array:</strong> [${newArr}]</p>
 `;
+
+
+// 11b  create a functions getLastValue(arr) that takes and array and returns the last value in the array.
+
+function getLastValue(arr) {
+    return arr[arr.length - 1];
+}
+
+getLastValue(numsArray); // 99
