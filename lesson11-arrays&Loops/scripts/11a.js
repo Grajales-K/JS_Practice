@@ -40,3 +40,29 @@ funArrContainer.innerHTML = `
   <p><strong>The last value of  ['hi', 'hello', 'good']:</strong> ${test4}</p>
 `;
 
+// 11c. Create a function arraySWAP(arr) that takes and array and return an array where the firts and last values are swapped or switched: [1, 20, 22, 24, 5 ] => [5, 20, 22, 24, 1]
+
+
+function arraySwap(arr){
+
+    if(arr.length > 2){
+      const firstValue = arr[0];
+      const lastValue = arr[arr.length - 1];
+
+      // slice the array to get the middle values
+      const newArr = arr.slice(1, arr.length - 1);
+
+
+      console.log([lastValue, ...newArr, firstValue]);
+      return [lastValue, ...newArr, firstValue];
+    }
+
+}
+
+const test5 = arraySwap([1, 20, 22, 24, 5]); 
+
+const printEle = document.querySelector('.reverseEle');
+
+printEle.innerHTML = `<p><strong>original array: [1, 20, 22, 24, 5] =>  [${test5.join(', ')}]</strong></p>`;
+
+
