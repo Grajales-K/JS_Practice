@@ -10,7 +10,7 @@ numsArray[numsArray.length - 1] = 99;
 const newArr = numsArray.join(', '); // "10, 20, 99"
 
 document.querySelector('.numbers').innerHTML = `
-    <p><strong>original Array:</strong> [${originalArr}]</p>
+    <p><strong>original Array: </strong> [${originalArr}]</p>
     <p><strong>new Array:</strong> [${newArr}]</p>
 `;
 
@@ -18,12 +18,25 @@ document.querySelector('.numbers').innerHTML = `
 // 11b  create a functions getLastValue(arr) that takes and array and returns the last value in the array.
 
 function getLastValue(arr) {
-
-    document.querySelector('.funArr').innerHTML = `
-        <p><strong>last value in the array:</strong> ${arr[arr.length - 1]}</p>
-    `;
-    return arr[arr.length - 1];
-
+    // if the array is empty, return undefined
+  if (arr.length === 0) return undefined;
+  return arr[arr.length - 1];
 }
 
-getLastValue(numsArray); // 99
+//identify the element where we want to insert the results of the function calls
+const funArrContainer = document.querySelector('.funArr');
+
+// call the function with different arrays and store the results in variables
+const test1 = getLastValue(numsArray); // 99
+const test2 = getLastValue([1, 2, 3, 4, 5]); // 5
+const test3 = getLastValue([1, 20, 22, 24, 5]); // 5
+const test4 = getLastValue(['hi', 'hello', 'good']); // "good"
+
+//now we can print the results in our html element
+funArrContainer.innerHTML = `
+  <p><strong>The last value of numsArray:</strong> ${test1}</p>
+  <p><strong>The last value of  [1..5]:</strong> ${test2}</p>
+  <p><strong>The last value of  [1, 20, 22, 24, 5]:</strong> ${test3}</p>
+  <p><strong>The last value of  ['hi', 'hello', 'good']:</strong> ${test4}</p>
+`;
+
