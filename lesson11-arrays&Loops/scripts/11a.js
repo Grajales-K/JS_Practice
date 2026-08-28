@@ -142,3 +142,23 @@ function addNum(arr, num){
 console.log(addNum([1, 2, 3], 5)); 
 
 
+console.log('======== 11i Funtion adding 2 parametes ========');
+// 11j. Create a function addArrays(array1, array2) that takes 2 arrays of numbers and add each number in the arrays together.
+
+function addArrays(arr1, arr2){
+  let newArr = [];
+
+  const maxLength = Math.max(arr1.length, arr2.length);
+
+  for(let i = 0; i < maxLength; i++) {
+    const value1 = arr1[i] || 0;
+    const value2 = arr2[i] || 0;
+
+    newArr.push(value1 + value2);
+
+  }
+
+  return newArr;
+}
+
+console.log(addArrays([1, 2, 3], [4, 5, 6, 7])); // [5, 7, 9, 7]
