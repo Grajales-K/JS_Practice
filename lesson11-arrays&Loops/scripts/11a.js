@@ -95,7 +95,7 @@ for (let i = 5; i >= 0; i--) {
 }
 
 // 11g. Create a loop that takes an array of numbers and creates a new array where each number is increased by 1. [1, 2, 3] => [2, 3, 4]
-console.log('======== for loop ++ ========');
+console.log('======== 11g for loop ++ ========');
 
 const arrNum = [1, 2, 3, 4, 5];
 
@@ -108,7 +108,7 @@ console.log(newNumb);
 
 
 
-console.log('======== Funtion ++ ========');
+console.log('======== 11h Funtion ++ ========');
 // 11h. Create a function addOne(arr) that takes an array of numbers and returns a new array where each number is increased by 1. [1, 2, 3] => [2, 3, 4]
 
 const arrNumers = [-2, -1, 0, 99, 5];
@@ -123,3 +123,22 @@ function addOne(arrNum) {
 }
 
 console.log(addOne(arrNumers));
+
+
+console.log('======== 11i Funtion 2 parametes ========');
+// 11i. Create a funcion addNum(arr, num) that takes an array of numbers and returns an array where eah number is increased by 'num'.
+
+
+function addNum(arr, num){
+  let newArrNum = [];
+
+  for(let i = 0; i < arr.length; i++){
+    newArrNum.push((arr[i]) + num); ;
+  }
+  return newArrNum;
+}
+
+
+console.log(addNum([1, 2, 3], 5)); 
+
+
