@@ -142,8 +142,8 @@ function addNum(arr, num){
 console.log(addNum([1, 2, 3], 5)); 
 
 
-console.log('======== 11i Funtion adding 2 parametes ========');
-// 11j. Create a function addArrays(array1, array2) that takes 2 arrays of numbers and add each number in the arrays together.
+console.log('======== 11j Funtion adding 2 parametes ========');
+// 11j. Create a function addArrays(array1, array2) that takes 2 arrays of numbers and adds each number in the arrays together. [1, 2, 3], [4, 5, 6] => [5, 7, 9]. If the arrays are not the same length, add the missing values as 0. [1, 2, 3], [4, 5, 6, 7] => [5, 7, 9, 7]
 
 function addArrays(arr1, arr2){
   let newArr = [];
@@ -162,3 +162,22 @@ function addArrays(arr1, arr2){
 }
 
 console.log(addArrays([1, 2, 3], [4, 5, 6, 7])); // [5, 7, 9, 7]
+
+
+console.log('======== 11k Funtion count positive ========');
+// 11k. Create a functiion countPositive(nums) that takes an array of numbers and returns how many numbers in the array are greater than 0.
+
+
+function countPositive(nums){
+  let count = 0;
+
+  for (let i = 0; i < nums.length; i++){
+    if(nums[i] > 0){
+      count++;
+    }
+  }
+
+  return count;
+}
+
+console.log(countPositive([-1, 0, 1, 2, 3])); // 3
