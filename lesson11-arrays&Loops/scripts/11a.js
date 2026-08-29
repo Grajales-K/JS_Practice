@@ -174,3 +174,25 @@ function countPositive(nums) {
 }
 
 console.log(countPositive([-1, 0, 1, 2, 3])); // 3
+
+console.log('======== 11l Funtion minMax ========');
+// 11l. Create a function minMax(nums)that takes an array of numbers and returns an object with the minimun and maximun numbers in the array (do this using a loop instead of using something like math.min(). minMax([1, -3, 5]) => {min: -3 max: 5}.
+
+function minMax(nums){
+  let min = nums[0];
+  let max = nums[0];
+
+  for(let i = 0; i < nums.length; i++){
+    if(nums[i] > max){
+      max = nums[i];
+    }
+    
+    if(nums[i] < min){
+      min = nums[i];
+    } 
+  }
+
+  return {min, max};
+}
+
+console.log(minMax([1, 3, 5, -10])); // {min: -3, max: 5}
