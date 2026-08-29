@@ -47,16 +47,19 @@ funArrContainer.innerHTML = `
 console.log('======== 11c. arraySwap() ========');
 
 function arraySwap(arr) {
-  if (arr.length > 2) {
-    const firstValue = arr[0];
-    const lastValue = arr[arr.length - 1];
-
-    // slice the array to get the middle values
-    const newArr = arr.slice(1, arr.length - 1);
-
-    console.log([lastValue, ...newArr, firstValue]);
-    return [lastValue, ...newArr, firstValue];
+  if (arr.length <= 1) {
+    return arr;
   }
+
+  const firstValue = arr[0];
+  const lastValue = arr[arr.length - 1];
+
+  // slice the array to get the middle values
+  const newArr = arr.slice(1, arr.length - 1);
+
+  console.log([lastValue, ...newArr, firstValue]);
+  return [lastValue, ...newArr, firstValue];
+  
 }
 
 const test5 = arraySwap([1, 20, 22, 24, 5]);
@@ -112,9 +115,10 @@ console.log('======== 11h Funtion ++ ========');
 // 11h. Create a function addOne(arr) that takes an array of numbers and returns a new array where each number is increased by 1. [1, 2, 3] => [2, 3, 4]
 
 const arrNumers = [-2, -1, 0, 99, 5];
-let doubleArr = [];
 
 function addOne(arrNum) {
+  let doubleArr = [];
+
   for (let i = 0; i < arrNum.length; i++) {
     doubleArr.push(arrNum[i] + 1);
   }
@@ -123,6 +127,7 @@ function addOne(arrNum) {
 }
 
 console.log(addOne(arrNumers));
+console.log(addOne([1, 2, 3])); // [2, 3, 4]
 
 console.log('======== 11i Funtion 2 parametes ========');
 // 11i. Create a funcion addNum(arr, num) that takes an array of numbers and returns an array where eah number is increased by 'num'.
@@ -210,10 +215,6 @@ function minMaxUpdated(nums){
 
   if(nums.length === 0){
     return {min: null, max: null};
-  }
-
-  if(nums.length === 1){
-    return {min: nums[0], max: nums[0]};
   }
 
   for (let i = 0; i < nums.length; i++) {
