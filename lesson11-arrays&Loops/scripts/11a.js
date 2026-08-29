@@ -196,3 +196,64 @@ function minMax(nums){
 }
 
 console.log(minMax([1, 3, 5, -10])); // {min: -3, max: 5}
+
+
+
+console.log('======== 11m Funtion minMax ========');
+// 11m. Update the exercise 11l to also handle these cases:
+// minMax([]) => {min: null, max: null}
+// minMax([5]) => {min: 5, max: 5}
+
+function minMaxUpdated(nums){
+  let min = nums[0];
+  let max = nums[0];
+
+  if(nums.length === 0){
+    return {min: null, max: null};
+  }
+
+  if(nums.length === 1){
+    return {min: nums[0], max: nums[0]};
+  }
+
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] > max) {
+      max = nums[i];
+    }
+
+    if (nums[i] < min) {
+      min = nums[i];
+    }
+  }
+
+    return { min, max };
+}
+
+console.log(minMaxUpdated([])); // {min: null, max: null}
+console.log(minMaxUpdated([3])); // {min: 3, max: 3}
+
+
+console.log('======== 11n Funtion countWords ========');
+// 11n. Create a function countWords(words) that takes an array of strings and return an object with how mnay times each string appeared. CounWords(['apple, 'grape', 'apple', 'apple']) => {apple: 3, grape: 1}.
+
+
+function countWords(words){
+  let result = {};
+
+  for(let i = 0; i < words.length; i++){
+    const word = words[i];
+
+    if(result[word]){
+      result[word]++;
+    }else{
+      result[word] = 1;
+    }
+  }
+
+  return result;
+}
+
+
+console.log(countWords(['apple', 'grape', 'apple', 'apple'])); // {apple: 3, grape: 1}
+
+console.log(countWords(['banana', 'orange', 'banana', 'kiwi', 'watermelon', 'pinaple', 'kiwi', 'kiwi'])); // {banana: 2, orange: 1, kiwi: 3, watermelon: 1, pinaple: 1}
