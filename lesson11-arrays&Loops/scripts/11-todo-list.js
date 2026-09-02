@@ -21,13 +21,13 @@ function renderToddoList(){
       // const dueDate = todoObject.dueDate;
       const { name, dueDate } = todoObject; // Destructuring method.
 
-      const html = `<p>
-                ${name} ${dueDate}
+      const html = `
+                <div>${name}</div>
+                <div>${dueDate}</div>
                 <button onclick="
                     todoList.splice(${i}, 1);
                     renderToddoList();
-                ">Delete</button>
-            <p>`;
+                ">Delete</button>`;
       todoListHTML += html;
     }
 
