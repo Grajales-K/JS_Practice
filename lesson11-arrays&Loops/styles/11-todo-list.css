@@ -2,3 +2,16 @@ body {
     text-align: center;
     background-color: #f4f5f7;
 }
+
+.todo-grid,
+.todo-input-grid {
+    display: grid;
+    grid-template-columns: 200px 150px 100px;
+    justify-content: center;
+    column-gap: 10px;
+    row-gap: 20px;
+}
+
+.todo-input-grid {
+    margin-bottom: 20px;
+}
