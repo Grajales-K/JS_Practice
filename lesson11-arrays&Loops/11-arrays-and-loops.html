@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arrays and Loops</title>
-   
+
 </head>
 
 <body>
 
 
     <script>
-        
+
         const myArray = [10, 20, 30]
         console.log(myArray[0]) // 10
 
@@ -22,66 +22,107 @@
         myArray[0] = 100
         console.log(myArray[0])
 
-        const array2 = [1, 'hello', true, 3.14, null, { name: 'socks' }, [1, 2]] 
+        const array2 = [1, 'hello', true, 3.14, null, { name: 'socks' }, [1, 2]]
 
         console.log(myArray.length) // 3
 
-        console.log(" =========== loops ========") 
+        console.log(" =========== loops ========")
 
         let i = 1;
 
-        while (i  <= 5){
+        while (i <= 5) {
             console.log(i);
             i = i + 1;
         }
 
-        for(let i = 1; i <= 5; i++){
+        for (let i = 1; i <= 5; i++) {
             console.log(i);
         }
 
-        let randomNumer;
+        console.log(" =========== looping through an array ========")
 
-        while(randomNumer < 0.5){
-            randomNumer = Math.random();
-        }
-
-        console.log(randomNumer);
-
-        console.log(" =========== looping through an array ========") 
-
-        const todoList = [
+        const list = [
             'make dinner',
             'wash dishes',
             'watch youtube'
         ]
 
-        for (let index = 0; index < todoList.length -1; index++){
-            const value = todoList[index]
-            console.log(value)
+        for (let index = 0; index < list.length; index++) {
+            const value = list[index];
+            console.log(value);
         }
 
         console.log(" =========== accumulator Pattern ========")
-         
+
         // create a variable to store the resutl
 
         const numbers = [1, 2, 3, 4, 5];
         let total = 0;
 
-        for (let i = 0; i < numbers.length; i++){
+        for (let i = 0; i < numbers.length; i++) {
             const num = numbers[i];
             total += num;
         }
 
         console.log(total);
- 
+
         const numsDoubled = [];
 
-        for (let i = 0; i < numbers.length; i++){
-           const nums = numbers[i];
-           numsDoubled.push(nums * 2); 
+        for (let i = 0; i < numbers.length; i++) {
+            const nums = numbers[i];
+            numsDoubled.push(nums * 2);
         }
 
         console.log(numsDoubled);
+
+        console.log(" =========== Arrays Refereces ========");
+
+
+        const arrayOne = [1, 2, 3];
+        // This arrays represent a reference to the same array in memory
+
+        //without slice method, both arrays will point to the same reference in memory
+        const arrayTwo = arrayOne.slice();
+
+        arrayTwo.push(4);
+
+        console.log(arrayOne, "array1"); // [1, 2, 3]
+        console.log(arrayTwo, "array2"); // [1, 2, 3, 4]
+
+        console.log(" =========== Destructuring ========");
+
+        const [fistValue, secondValue] = [1, 2, 3, 4, 5];
+
+        console.log(fistValue, secondValue);
+
+        //exit a loop early using break statement
+        for (let i = 1; i <= 10; i++) {
+
+            //skip the iteration if the number is divisible by 3
+            if (i % 3 === 0) {
+                continue;
+            }
+            console.log(i);
+            if (i === 8) {
+                break;
+            }
+        }
+
+        console.log(" =========== While loop ========");
+
+
+        let j = 1;
+
+        while (j <= 10) {
+            if (j % 3 === 0) {
+                j++;
+                continue;
+            }
+            console.log(j);
+            j++;
+        }
+
+
     </script>
 </body>
 
