@@ -1,43 +1,43 @@
-const todoList = [{
-     name:'run',
-     dueDate: '2024-06-30',
-
-    }, {
-        
-     name: 'swim',
-     dueDate: '2024-07-01',
-    }];
+const todoList = [
+  {
+    name: 'run',
+    dueDate: '2024-06-30'
+  },
+  {
+    name: 'swim',
+    dueDate: '2024-07-01'
+  }
+];
 
 renderToddoList();
 console.log(todoList);
 
-function renderToddoList(){
+function renderToddoList() {
+  let todoListHTML = '';
 
-    let todoListHTML = '';
+  for (let i = 0; i < todoList.length; i++) {
+    const todoObject = todoList[i];
+    // const name = todoObject.name;
+    // const dueDate = todoObject.dueDate;
+    const { name, dueDate } = todoObject; // Destructuring method.
 
-    for (let i = 0; i < todoList.length; i++){
-      const todoObject = todoList[i];
-      // const name = todoObject.name;
-      // const dueDate = todoObject.dueDate;
-      const { name, dueDate } = todoObject; // Destructuring method.
-
-      const html = `
+    const html = `
                 <div>${name}</div>
                 <div>${dueDate}</div>
                 <button onclick="
                     todoList.splice(${i}, 1);
                     renderToddoList();
-                ">Delete</button>`;
-      todoListHTML += html;
-    }
+                    " class="delete-todo-button">Delete</button>`;
+    todoListHTML += html;
+  }
 
-    console.log(todoListHTML);
+  console.log(todoListHTML);
 
-    document.querySelector('.js-todo-list').innerHTML = todoListHTML = todoListHTML;
-
+  document.querySelector('.js-todo-list').innerHTML = todoListHTML =
+    todoListHTML;
 }
 
-function addTodo(todo){
+function addTodo(todo) {
   const inputElement = document.querySelector('.js-name-input');
   const name = inputElement.value;
 
@@ -56,6 +56,3 @@ function addTodo(todo){
   inputElement.value = '';
   renderToddoList();
 }
-
-
-

@@ -1,17 +1,48 @@
 body {
+  background-color: #f4f5f7;
+}
+
+h1 {
+    margin: 4rem;
     text-align: center;
-    background-color: #f4f5f7;
 }
 
 .todo-grid,
 .todo-input-grid {
-    display: grid;
-    grid-template-columns: 200px 150px 100px;
-    justify-content: center;
-    column-gap: 10px;
-    row-gap: 20px;
+  display: grid;
+  grid-template-columns: 200px 150px 100px;
+  justify-content: center;
+  column-gap: 10px;
+  row-gap: 20px;
 }
 
 .todo-input-grid {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
+  align-items: stretch;
+}
+
+.name-input,
+.due-date-input {
+  font-size: 16px;
+  padding: 6px;
+}
+
+.add-todo-button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.delete-todo-button {
+  background-color: #950c02;
+  color: white;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
