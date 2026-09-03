@@ -21,7 +21,7 @@
             price: 2090
         };
 
-        //this is the same because we are assigning the reference of product1 to product3, so they point to the same object in memory
+        //product3 is pointing to the same memory reference on product1 because we are assigning the reference of product1 to product3, so they point to the same object in memory
         const product3 = product1;
 
         function isSameProduct(product1, product2){
@@ -31,6 +31,7 @@
                 return false;
             }
         }
+
 
         console.log(isSameProduct(product1, product2)); // false
 
