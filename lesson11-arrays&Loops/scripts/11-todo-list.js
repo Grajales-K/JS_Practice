@@ -3,33 +3,27 @@ const todoList = ['run', ['swim']];
 renderToddoList();
 console.log(todoList);
 
-function renderToddoList(){
+function renderToddoList() {
+  let todoListHTML = '';
 
-    let todoListHTML = '';
+  for (let i = 0; i < todoList.length; i++) {
+    const todo = todoList[i];
+    const html = `<p>${todo}<p>`;
+    todoListHTML += html;
+  }
 
-    for (let i = 0; i < todoList.length; i++){
-        const todo = todoList[i];
-        const html = `<p>${todo}<p>`;
-        todoListHTML += html;
-    }
+  console.log(todoListHTML);
 
-    console.log(todoListHTML);
-
-    document.querySelector('.js-todo-list').innerHTML = todoListHTML = todoListHTML;
-
+  document.querySelector('.js-todo-list').innerHTML = todoListHTML;
 }
 
-function addTodo(todo){
-    const inputElement = document.querySelector(".js-name-input");
-    const name = inputElement.value;
+function addTodo() {
+  const inputElement = document.querySelector('.js-name-input');
+  const name = inputElement.value;
 
-    todoList.push(name);
-    console.log(todoList);
+  todoList.push(name);
+  console.log(todoList);
 
-    inputElement.value = "";
-    renderToddoList();
-
+  inputElement.value = '';
+  renderToddoList();
 }
-
-
-
