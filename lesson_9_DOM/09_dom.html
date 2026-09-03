@@ -37,7 +37,9 @@
         console.log(document.querySelector('button').innerHTML);
         document.querySelector('button').innerHTML = "Click";
 
-        const buttonElement = document.querySelector('.btn-2').innerHTML = "People";
+        const buttonElement = document.querySelector('.btn-2');
+
+        buttonElement.innerHTML = "People";
 
         console.log(buttonElement); //people
     </script>
