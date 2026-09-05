@@ -36,10 +36,10 @@
     console.log(foundIndex);
 
 
-    console.log('======== 11q Create a funciont(arr, word) ========');
+    console.log('======== 11q Create a function(arr, word) ========');
     // Create a funcion findeIndex(arr, word) that searches an array for a string (in the word parameter) and returns the index of the first appearance of the string. if it does't exist in the array, return -1
 
-    function findIndex(arr, word){
+    function findIndex(arr, word) {
       let foundIndex = -1;
       for (let i = 0; i < arr.length; i++) {
         if (arr[i] === word) {
@@ -50,8 +50,53 @@
       return foundIndex;
     }
 
-  console.log(findIndex(['green', 'blue', 'red', 'yellow'], 'red'));// 2
-  console.log(findIndex(['green', 'blue', 'red'], 'yellow')); // -1
+    console.log(findIndex(['green', 'blue', 'red', 'yellow'], 'red'));// 2
+    console.log(findIndex(['green', 'blue', 'red'], 'yellow')); // -1
+
+    console.log('======== 11r Create a funtion removeEgg(foods) ========');
+    // Create a function removeEgg(foods) that takes an array of string and returns an array where the string 'egg' is removed. (hint: loop through the array and check if each string is 'egg', if it is continue; to skip it, if it's not 'egg', add it to the result) 
+    // removeEgg(['egg', 'appe', 'egg', 'egg', 'ham']) => ['appe', 'ham']
+
+    function removeEgg(foods) {
+      let newArr = [];
+      for (let i = 0; i < foods.length; i++) {
+        if (foods[i] === 'egg') {
+          continue;
+        } else {
+          newArr.push(foods[i])
+        }
+      }
+
+      return newArr;
+    }
+
+    console.log(removeEgg(['egg', 'appe', 'egg', 'egg', 'ham'])); // ['appe', 'ham']
+
+
+    console.log('======== 11s Create a funtion removeEgg(foods) ========');
+    // Update the exercise 11r to remove the first 2 egg from the array. remove(['egg', 'appe', 'egg', 'egg', 'ham']) => ['appe', 'egg', 'ham']
+
+
+    function removeEgg2(foods) {
+      let newArr = [];
+      let eggCount = 0;
+
+      for (let i = 0; i < foods.length; i++) {
+        if (foods[i] === 'egg' && eggCount < 2 ) {
+          eggCount++;
+          continue;
+        } else {
+          newArr.push(foods[i])
+        }
+      }
+
+      return newArr;
+    }
+
+    console.log(removeEgg2(['egg', 'appe', 'egg', 'egg', 'ham'])); // ['appe', 'egg', 'ham']
+
+    
+
 
   </script>
 </body>
