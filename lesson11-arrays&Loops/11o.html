@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <body>
   <script>
 
@@ -16,12 +17,25 @@
     for (let i = 0; i < stringArr.length; i++) {
       if (stringArr[i] === 'search') {
         foundIndex = i;
-        // console.log(foundIndex);
       }
     }
     console.log(foundIndex);
 
-    console.log('======== 11p agetLastValue() ========');
+
+    console.log('======== 11p find the first element ========');
+
+    const stringArr3 = ['search', 'hello', 'world', 'search', 'good', 'search'];
+
+    for (let i = 0; i < stringArr3.length; i++) {
+      if (stringArr3[i] === 'search') {
+        foundIndex = i;
+        break; // exit the loop once found
+      }
+    }
+    console.log(foundIndex);
+
+
+
 
   </script>
 </body>
