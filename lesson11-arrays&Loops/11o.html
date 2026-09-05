@@ -23,6 +23,7 @@
 
 
     console.log('======== 11p find the first element ========');
+    // Modify 11o so that if 'search' appears multiple times in the array, console.log the firs element of it in the array. 
 
     const stringArr3 = ['search', 'hello', 'world', 'search', 'good', 'search'];
 
@@ -35,7 +36,22 @@
     console.log(foundIndex);
 
 
+    console.log('======== 11q Create a funciont(arr, word) ========');
+    // Create a funcion findeIndex(arr, word) that searches an array for a string (in the word parameter) and returns the index of the first appearance of the string. if it does't exist in the array, return -1
 
+    function findIndex(arr, word){
+      let foundIndex = -1;
+      for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === word) {
+          foundIndex = i;
+          break; // exit the loop once found
+        }
+      }
+      return foundIndex;
+    }
+
+  console.log(findIndex(['green', 'blue', 'red', 'yellow'], 'red'));// 2
+  console.log(findIndex(['green', 'blue', 'red'], 'yellow')); // -1
 
   </script>
 </body>
