@@ -170,6 +170,43 @@
       }
     }
 
+    console.log('======== 11w remove duplicates ========');
+    // 11w. Create a copy of the exercise 11q. Where we created findIndex(). Bellow it, create a function unique(arr) where each string only appears once (there are no duplicates). Try to use the findIndex() function in your solution.
+    // unique(['green', 'blue', 'red', 'green', 'blue']) => ['green', 'blue', 'red']
+
+    //11q
+     function findIndex(arr, word) {
+        let foundIndex = -1;
+        for (let i = 0; i < arr.length; i++) {
+          if (arr[i] === word) {
+            foundIndex = i;
+            break; // exit the loop once found
+          }
+        }
+        return foundIndex;
+      }
+
+    const colors = ['green', 'green', 'blue', 'red', 'green', 'blue']
+
+    function unique(arr){
+      let result = [];
+
+      for(let i = 0; i < arr.length; i++){
+        // we need to pick each word from our arr.
+        const word = arr[i];
+
+        // we recall the findIndex() function we created earlier to check if the word is already in our result array.
+        if(findIndex(result, word) === -1){
+          result.push(word);
+        }
+
+      }
+      return result;
+    }
+
+    console.log(unique(colors));// ['green', 'blue', 'red']
+
+    
 
   </script>
 </body>
