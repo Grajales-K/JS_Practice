@@ -96,7 +96,7 @@
     console.log(removeEgg2(['egg', 'appe', 'egg', 'egg', 'ham'])); // ['appe', 'egg', 'ham']
 
 
-    console.log('======== 11t Create a funtion removeEgg(foods) ========');
+    console.log('======== 11t Create a funtion removeEgg(foods) and reverse() ========');
     // Arrays have a method called .reverse() which reverses the order of the values in the array, update the  exercises 11s to only remove the last 2 egg. from the array.
     // removeEgg(['egg', 'appe', 'egg', 'egg', 'ham']) => ['egg', 'appe', 'ham']
 
@@ -119,6 +119,56 @@
     console.log(removeEgg3(['egg', 'appe', 'egg', 'egg', 'ham'])); // ['egg', 'appe', 'ham']
 
 
+    console.log('======== 11u mutating the elements in the array ========');
+    //11u. THE exercise 11t is mutating the elements in the array, Update the code so the function does not modify the orfiginal array. use slice to create a copy of the array and then reverse the copy.
+
+
+
+    const foods = ['egg', 'appe', 'egg', 'egg', 'ham'];
+
+    const foodCopy = foods.slice()
+
+    function removeEgg4(foods) {
+
+      const foodCopy = foods.slice()
+
+      let newArr = [];
+      let eggCounter = 0;
+
+      for (let i = 0; i < foodCopy.length; i++) {
+        if (foodCopy[i] === 'egg' && eggCounter < 2) {
+          eggCounter++;
+          continue;
+        } else {
+          newArr.push(foodCopy[i])
+        }
+      }
+      return newArr.reverse();
+    }
+
+    console.log(removeEgg4(foods), 'reverse arr');// ['egg', 'appe', 'ham']
+    console.log(foods, 'original array is not modified'); // ['egg', 'appe', 'egg', 'egg', 'ham'] 
+
+
+    console.log('======== CHALLENGE EXERCISES ========');
+    /* 11v. we'll do the famous fizzbuzz problem. create a loop. that displays 1 to 20 in the console. 
+    if the nunber is divisible by 3, console.log 'fizz', 
+    if the number is divisible by 5, console.log 'buzz', 
+    if the number is divisible by both 3 and 5, console.log 'fizzbuzz', 
+    if the number is not divisible by either 3 or 5, console.log the number itself.
+    example output: 1, 2, fizz, 4, buzz, fizz, 7, 8, fizz, buzz, 11, fizz, 13, 14, fizzbuzz, 16, 17, fizz, 19, buzz */
+
+    //  We check 3 and 5 first because 15 is divisible by both.If we check 3 first, 15 will be caught by that condition and fizzbuzz will never run.
+
+    for (let i = 1; i <= 20; i++) {
+      if (i % 3 === 0 && i % 5 === 0) {
+        console.log('fizzbuzz');
+      } else if (i % 3 === 0) {
+        console.log('fizz');
+      } else {
+        console.log(i);
+      }
+    }
 
 
   </script>
