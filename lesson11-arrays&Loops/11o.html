@@ -53,6 +53,7 @@
     console.log(findIndex(['green', 'blue', 'red', 'yellow'], 'red'));// 2
     console.log(findIndex(['green', 'blue', 'red'], 'yellow')); // -1
 
+
     console.log('======== 11r Create a funtion removeEgg(foods) ========');
     // Create a function removeEgg(foods) that takes an array of string and returns an array where the string 'egg' is removed. (hint: loop through the array and check if each string is 'egg', if it is continue; to skip it, if it's not 'egg', add it to the result) 
     // removeEgg(['egg', 'appe', 'egg', 'egg', 'ham']) => ['appe', 'ham']
@@ -76,13 +77,12 @@
     console.log('======== 11s Create a funtion removeEgg(foods) ========');
     // Update the exercise 11r to remove the first 2 egg from the array. remove(['egg', 'appe', 'egg', 'egg', 'ham']) => ['appe', 'egg', 'ham']
 
-
     function removeEgg2(foods) {
       let newArr = [];
       let eggCount = 0;
 
       for (let i = 0; i < foods.length; i++) {
-        if (foods[i] === 'egg' && eggCount < 2 ) {
+        if (foods[i] === 'egg' && eggCount < 2) {
           eggCount++;
           continue;
         } else {
@@ -95,7 +95,30 @@
 
     console.log(removeEgg2(['egg', 'appe', 'egg', 'egg', 'ham'])); // ['appe', 'egg', 'ham']
 
-    
+
+    console.log('======== 11t Create a funtion removeEgg(foods) ========');
+    // Arrays have a method called .reverse() which reverses the order of the values in the array, update the  exercises 11s to only remove the last 2 egg. from the array.
+    // removeEgg(['egg', 'appe', 'egg', 'egg', 'ham']) => ['egg', 'appe', 'ham']
+
+    function removeEgg3(foods) {
+      let newArr = [];
+      let eggCounter = 0;
+
+      for (let i = 0; i < foods.length; i++) {
+        if (foods[i] === 'egg' && eggCounter < 2) {
+          eggCounter++;
+          continue;
+        } else {
+          newArr.push(foods[i])
+        }
+      }
+
+      return newArr.reverse();
+    }
+
+    console.log(removeEgg3(['egg', 'appe', 'egg', 'egg', 'ham'])); // ['egg', 'appe', 'ham']
+
+
 
 
   </script>
