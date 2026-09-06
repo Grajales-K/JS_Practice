@@ -175,28 +175,28 @@
     // unique(['green', 'blue', 'red', 'green', 'blue']) => ['green', 'blue', 'red']
 
     //11q
-     function findIndex(arr, word) {
-        let foundIndex = -1;
-        for (let i = 0; i < arr.length; i++) {
-          if (arr[i] === word) {
-            foundIndex = i;
-            break; // exit the loop once found
-          }
+    function findIndex(arr, word) {
+      let foundIndex = -1;
+      for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === word) {
+          foundIndex = i;
+          break; // exit the loop once found
         }
-        return foundIndex;
       }
+      return foundIndex;
+    }
 
     const colors = ['green', 'green', 'blue', 'red', 'green', 'blue']
 
-    function unique(arr){
+    function unique(arr) {
       let result = [];
 
-      for(let i = 0; i < arr.length; i++){
+      for (let i = 0; i < arr.length; i++) {
         // we need to pick each word from our arr.
         const word = arr[i];
 
         // we recall the findIndex() function we created earlier to check if the word is already in our result array.
-        if(findIndex(result, word) === -1){
+        if (findIndex(result, word) === -1) {
           result.push(word);
         }
 
@@ -206,7 +206,10 @@
 
     console.log(unique(colors));// ['green', 'blue', 'red']
 
-    
+
+    console.log('======== 11x add local storage to the todoList ========');
+
+
 
   </script>
 </body>
