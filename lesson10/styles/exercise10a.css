@@ -1,0 +1,96 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 40px 20px;
+  background-color: #f4f5f7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.box {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 24px 32px;
+  text-align: center;
+  min-width: 280px;
+  border: 1px solid #e1e4e8;
+  width: 450px;
+}
+
+.box p {
+  margin-top: 0;
+  margin-bottom: 30px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333333;
+}
+
+.btn-1 {
+  background-color: rgb(255, 216, 20);
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 50px;
+  padding: 10px 60px;
+}
+
+.toggled-on,
+.btn-2 {
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 10px 30px;
+  margin-right: 15px;
+}
+
+.toggled-off,
+.btn-3 {
+  background-color: rgb(232, 229, 229);
+  color: black;
+  font-weight: bold;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 10px 30px;
+  margin-right: 15px;
+}
+
+/*======== amazon shipping calculator ==========*/
+
+.cost-input {
+  font-size: 16px;
+  padding: 10px;
+}
+
+.calculate-btn {
+  background-color: green;
+  color: white;
+  border: none;
+  font-size: 16px;
+  padding: 12px 15px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.box .js-total-cost {
+  font-size: 20px; 
+  font-weight: bold;
+  color: #333333;
+  margin-top: 20px;
+}
+
+.box .error-message {
+  color: red;
+  font-size: 16px;
+  font-weight: bold;
+}
