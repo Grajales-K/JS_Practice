@@ -1,0 +1,260 @@
+console.log('======== 11a. modify last value ========');
+
+// 11a. create an arrays [10, 20, 30] and modify the last value to 99
+
+const numsArray = [10, 20, 30];
+
+// to be able to print the original array and the modified array, we can use the join() method to convert the array to a string.
+const originalArr = numsArray.join(', '); // "10, 20, 30"
+
+numsArray[numsArray.length - 1] = 99;
+
+const newArr = numsArray.join(', '); // "10, 20, 99"
+
+document.querySelector('.numbers').innerHTML = `
+    <p><strong>original Array: </strong> [${originalArr}]</p>
+    <p><strong>new Array:</strong> [${newArr}]</p>
+`;
+
+console.log('======== 11b agetLastValue() ========');
+
+// 11b  create a functions getLastValue(arr) that takes and array and returns the last value in the array.
+
+function getLastValue(arr) {
+  // if the array is empty, return undefined
+  if (arr.length === 0) return undefined;
+  return arr[arr.length - 1];
+}
+
+//identify the element where we want to insert the results of the function calls
+const funArrContainer = document.querySelector('.funArr');
+
+// call the function with different arrays and store the results in variables
+const test1 = getLastValue(numsArray); // 99
+const test2 = getLastValue([1, 2, 3, 4, 5]); // 5
+const test3 = getLastValue([1, 20, 22, 24, 5]); // 5
+const test4 = getLastValue(['hi', 'hello', 'good']); // "good"
+
+//now we can print the results in our html element
+funArrContainer.innerHTML = `
+  <p><strong>The last value of numsArray:</strong> ${test1}</p>
+  <p><strong>The last value of  [1..5]:</strong> ${test2}</p>
+  <p><strong>The last value of  [1, 20, 22, 24, 5]:</strong> ${test3}</p>
+  <p><strong>The last value of  ['hi', 'hello', 'good']:</strong> ${test4}</p>
+`;
+
+// 11c. Create a function arraySWAP(arr) that takes and array and return an array where the firts and last values are swapped or switched: [1, 20, 22, 24, 5 ] => [5, 20, 22, 24, 1]
+console.log('======== 11c. arraySwap() ========');
+
+function arraySwap(arr) {
+  if (arr.length <= 1) {
+    return arr;
+  }
+
+  const firstValue = arr[0];
+  const lastValue = arr[arr.length - 1];
+
+  // slice the array to get the middle values
+  const newArr = arr.slice(1, arr.length - 1);
+
+  console.log([lastValue, ...newArr, firstValue]);
+  return [lastValue, ...newArr, firstValue];
+  
+}
+
+const test5 = arraySwap([1, 20, 22, 24, 5]);
+
+const printEle = document.querySelector('.reverseEle');
+
+printEle.innerHTML = `<p><strong>original array: [1, 20, 22, 24, 5] =>  [${test5.join(
+  ', '
+)}]</strong></p>`;
+
+// 11d. Create a for loop that counts up from 0 to 10, but counts up by 2 (0, 2, 4, 6, 8, 10).
+console.log('======== 11d. for loop ========');
+for (let i = 0; i <= 10; i += 2) {
+  console.log(i);
+}
+
+// 11f. Do exercises 11d and 11e, but using a while loops.
+console.log('======== 11f While loops ========');
+
+let i = 0;
+
+while (i <= 10) {
+  console.log(i);
+  i += 2;
+}
+
+let k = 5;
+
+while (k >= 0) {
+  console.log(k, 'k');
+  k--;
+}
+
+// 11e.  Create a for loop that counts down from 5 to 0.
+console.log('======== 11e for loop decrement ========');
+for (let i = 5; i >= 0; i--) {
+  console.log(i);
+}
+
+// 11g. Create a loop that takes an array of numbers and creates a new array where each number is increased by 1. [1, 2, 3] => [2, 3, 4]
+console.log('======== 11g for loop ++ ========');
+
+const arrNum = [1, 2, 3, 4, 5];
+
+let newNumb = [];
+
+for (let i = 0; i < arrNum.length; i += 1) {
+  newNumb.push(arrNum[i] + 1);
+}
+console.log(newNumb);
+
+console.log('======== 11h Funtion ++ ========');
+// 11h. Create a function addOne(arr) that takes an array of numbers and returns a new array where each number is increased by 1. [1, 2, 3] => [2, 3, 4]
+
+const arrNumers = [-2, -1, 0, 99, 5];
+
+function addOne(arrNum) {
+  let doubleArr = [];
+
+  for (let i = 0; i < arrNum.length; i++) {
+    doubleArr.push(arrNum[i] + 1);
+  }
+
+  return doubleArr;
+}
+
+console.log(addOne(arrNumers));
+console.log(addOne([1, 2, 3])); // [2, 3, 4]
+
+console.log('======== 11i Funtion 2 parametes ========');
+// 11i. Create a funcion addNum(arr, num) that takes an array of numbers and returns an array where eah number is increased by 'num'.
+
+function addNum(arr, num) {
+  let newArrNum = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    newArrNum.push(arr[i] + num);
+  }
+  return newArrNum;
+}
+
+console.log(addNum([1, 2, 3], 5));
+
+console.log('======== 11j Funtion adding 2 parametes ========');
+// 11j. Create a function addArrays(array1, array2) that takes 2 arrays of numbers and adds each number in the arrays together. [1, 2, 3], [4, 5, 6] => [5, 7, 9]. If the arrays are not the same length, add the missing values as 0. [1, 2, 3], [4, 5, 6, 7] => [5, 7, 9, 7]
+
+function addArrays(arr1, arr2) {
+  let newArr = [];
+
+  const maxLength = Math.max(arr1.length, arr2.length);
+
+  for (let i = 0; i < maxLength; i++) {
+    const value1 = arr1[i] || 0;
+    const value2 = arr2[i] || 0;
+
+    newArr.push(value1 + value2);
+  }
+
+  return newArr;
+}
+
+console.log(addArrays([1, 2, 3], [4, 5, 6, 7])); // [5, 7, 9, 7]
+
+console.log('======== 11k Funtion count positive ========');
+// 11k. Create a functiion countPositive(nums) that takes an array of numbers and returns how many numbers in the array are greater than 0.
+
+function countPositive(nums) {
+  let count = 0;
+
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] > 0) {
+      count++;
+    }
+  }
+
+  return count;
+}
+
+console.log(countPositive([-1, 0, 1, 2, 3])); // 3
+
+console.log('======== 11l Funtion minMax ========');
+// 11l. Create a function minMax(nums)that takes an array of numbers and returns an object with the minimun and maximun numbers in the array (do this using a loop instead of using something like math.min(). minMax([1, -3, 5]) => {min: -3 max: 5}.
+
+function minMax(nums){
+  let min = nums[0];
+  let max = nums[0];
+
+  for(let i = 0; i < nums.length; i++){
+    if(nums[i] > max){
+      max = nums[i];
+    }
+    
+    if(nums[i] < min){
+      min = nums[i];
+    } 
+  }
+
+  return {min, max};
+}
+
+console.log(minMax([1, 3, 5, -10])); // {min: -3, max: 5}
+
+
+
+console.log('======== 11m Funtion minMax ========');
+// 11m. Update the exercise 11l to also handle these cases:
+// minMax([]) => {min: null, max: null}
+// minMax([5]) => {min: 5, max: 5}
+
+function minMaxUpdated(nums){
+  let min = nums[0];
+  let max = nums[0];
+
+  if(nums.length === 0){
+    return {min: null, max: null};
+  }
+
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] > max) {
+      max = nums[i];
+    }
+
+    if (nums[i] < min) {
+      min = nums[i];
+    }
+  }
+
+    return { min, max };
+}
+
+console.log(minMaxUpdated([])); // {min: null, max: null}
+console.log(minMaxUpdated([3])); // {min: 3, max: 3}
+
+
+console.log('======== 11n Funtion countWords ========');
+// 11n. Create a function countWords(words) that takes an array of strings and return an object with how mnay times each string appeared. CounWords(['apple, 'grape', 'apple', 'apple']) => {apple: 3, grape: 1}.
+
+
+function countWords(words){
+  let result = {};
+
+  for(let i = 0; i < words.length; i++){
+    const word = words[i];
+
+    if(result[word]){
+      result[word]++;
+    }else{
+      result[word] = 1;
+    }
+  }
+
+  return result;
+}
+
+
+console.log(countWords(['apple', 'grape', 'apple', 'apple'])); // {apple: 3, grape: 1}
+
+console.log(countWords(['banana', 'orange', 'banana', 'kiwi', 'watermelon', 'pinaple', 'kiwi', 'kiwi'])); // {banana: 2, orange: 1, kiwi: 3, watermelon: 1, pinaple: 1}
