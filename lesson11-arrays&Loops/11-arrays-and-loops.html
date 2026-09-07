@@ -34,14 +34,28 @@
         console.log(i);
       }
 
-      console.log(' =========== looping through an array ========');
+        console.log(" =========== while random number ========") 
 
-      const list = ['make dinner', 'wash dishes', 'watch youtube'];
+        let randomNumber = 0; // we initialize the var to 0 so that the while loop will run at least once
 
-      for (let index = 0; index < list.length; index++) {
-        const value = list[index];
-        console.log(value);
-      }
+        while (randomNumber < 0.5) {
+            // because the random number is less than 0.5, we will generate a new random number and reassign it to the variable randomNumber
+            randomNumber = Math.random();
+            console.log(randomNumber);
+        }
+
+        console.log(" =========== looping through an array ========") 
+
+        const todoList = [
+            'make dinner',
+            'wash dishes',
+            'watch youtube'
+        ]
+
+        for (let index = 0; index < todoList.length -1; index++){
+            const value = todoList[index]
+            console.log(value)
+        }
 
       console.log(' =========== accumulator Pattern ========');
 

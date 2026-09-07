@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Projects</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f4f6f8;
+            color: #333;
+            text-align: center;
+        }
+
+        div {
+            margin: 2rem;
+        }
+
+
+        button {
+            padding: 8px 16px;
+            font-size: 14px;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+            background-color:#a448f4;
+            color: white;
+            margin-right: 8px;
+            transition: background 0.2s;
+        }
+
+        button:hover {
+            background-color:  #6a4af9;
+        }
+
+        .card-container {
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            max-width: 400px;
+        }
+
+        .inputText,
+        .js-cost-input {
+            width: 170px;
+            padding: 8px 12px;
+            margin-bottom: 10px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Lesson 9 Dom-Events</h1>
+    </header>
+
+    <!-- ======== Amazon Calculator ======== -->
+
+    <!--  9g. Create a new file 9g.html rehuse the code amazon shipping calculator and enter the cost of 7.99 fix the issue. -->
+
+    <div class="card-container">
+        <p>Amazon Shipping Calculator</p>
+        <input class="js-cost-input" placeholder="cost of order" onkeydown="
+                handleCostKeyDown(event);
+        ">
+
+        <button onclick="
+            calculateTotal();
+            ">Calculate
+        </button>
+
+        <p class="js-total-cost"></p>
+    </div>
+
+    <!-- ======== Input event onkeyup ======== -->
+
+    <!-- 9h. Let's create the project on the rigth:
+        -whener we type in the box, update the test on the page.
+        -To do this we'll learn another event called <input onkeyup>.
+        -This runs code after we press a key and rease it (jey comes up).
+     -->
+
+    <div class="card-container">
+        <p>The keyup Event</p>
+        <input type="text" id="fnName" class="inputText" placeholder="type here" onkeyup="keyupEvent()">
+    </div>
+
+    <script>
+        // ====== function to handle keydown event on the input field and trigger the calculation ======
+        function handleCostKeyDown(event) {
+            if (event.key === 'Enter') {
+                calculateTotal();
+            }
+        }
+
+        // ============== calculator ===========
+
+        // 9g. Create a new file 9g.html rehuse the code amazon shipping calculator and enter the cost of 7.99 fix the issue.
+
+        function calculateTotal() {
+            // we need to use cents to make operations more accurate multiplying by 100 and then dividing by 100 at the end to get the final result
+            const inputElement = document.querySelector('.js-cost-input');
+            let cost = Number(inputElement.value) * 100;
+
+            // 40 * 100 = 4000 and 10 * 100 = 1000
+            if (cost < 4000) {
+                cost = cost + 1000;
+            }
+
+            // we have integer number of censt to displa the final result we need to divide by 100 to get the final result.
+            document.querySelector('.js-total-cost')
+                .innerHTML = `$ ${cost / 100}`;
+        }
+
+        // ============== 9h input onkeyup event ===========
+
+        function keyupEvent() {
+            let text = document.getElementById("fnName");
+            text.value = text.value.toUpperCase();
+        }
+
+    </script>
+    <footer>
+        <p>&copy; 2026 JS</p>
+    </footer>
+</body>
+
+</html>
