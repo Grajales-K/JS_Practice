@@ -17,7 +17,6 @@
     <div>
         <button onclick="
                 updateGuess('heads')
-
             ">Heads
         </button>
 
@@ -36,17 +35,19 @@
         2. when clicling 'tails' play the game with guess = 'tails'.
         3. create a function playGame(guess) to rehuse the code.
         */
-        // let guess = '';
+
+
 
         // 8j. Create a score object { wins: 0 losses: 0 } update the score each time after playing, and display the score in the console.
 
         // step 1, we need to use parse to save and read the score in localStorage, and if there is no score in localStorage, we need to create a new score object with wins and losses set to 0.
-        let score = JSON.parse(localStorage.getItem("score")) || {
+        let score =  JSON.parse(localStorage.getItem("score")) || {
             wins: 0,
             losses: 0
 
         }
 
+        showScore();
         showScore();
 
 
@@ -57,6 +58,7 @@
 
             if (guess === result) {
                 score.wins++;
+                console.log(`computer picked: ${result}, you picked: ${guess}`);
                 console.log(`computer picked: ${result}, you picked: ${guess}`);
             } else {
                 score.losses++;
@@ -70,11 +72,13 @@
 
             // step 3, we need to show the score in the console after each game.
             showScore();
+            showScore();
 
 
         }
 
 
+        function showScore() {
         function showScore() {
             console.log(`Score: Wins: ${score.wins}, Losses: ${score.losses}`);
 

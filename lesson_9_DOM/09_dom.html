@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+
+<body>
+
+    <p>This is a simple HTML template.</p>
+    <button>Hello</button>
+    <button class="btn-2">World</button>
+
+
+
+
+    <script>
+        /*
+        document.body.innerHTML = "Hello, Wordl!";
+        document.title = "Good job!";
+        */
+
+        console.log(document.title);
+        document.title = "Changed";
+
+
+        /* we can use document.body.innerHTML to change the content of the body of the document. For example, we can change the content of the body to a button element with the text "Click me".*/
+
+        // console.log(document.body.innerHTML);
+        // document.body.innerHTML = '<button>Click me</button>';
+
+        // ========= Documento query selector =======
+
+
+        console.log(document.querySelector('button').innerHTML);
+        document.querySelector('button').innerHTML = "Click";
+
+        const buttonElement = document.querySelector('.btn-2');
+
+        buttonElement.innerHTML = "People";
+
+        console.log(buttonElement); //people
+    </script>
+</body>
+
+</html>
