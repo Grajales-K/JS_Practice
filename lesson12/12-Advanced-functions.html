@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lesson12 Advaced Functions</title>
+</head>
+
+<body>
+  <script>
+
+    //---------- class 12 - Advanced Functions -----------
+
+    //Hoisting: is a JavaScript mechanism where variables and function declarations are moved to the top of their scope before code execution. This means that you can use functions and variables before they are declared in the code. like the example below
+
+    greeting(); // we can call the function before it's declared because of hoisting. And the anwer will be "Hello".
+
+    function greeting() {
+      console.log("Hello");
+    }
+
+    greeting();
+
+    const num = 2;
+
+    //anomymous function, because it's saved in a variable, it doesn't have a name
+    const function1 = function () {
+      console.log("hello2")
+    }
+
+    console.log(function1); // function greeting(){console.log("hello2")}
+
+    //we can see what type of function is by using typeof operator
+    console.log(typeof function1);
+
+    function1(); //hello2
+
+    console.log("------- Method: function saved inside an object ---------");
+
+    const object1 = {
+      num: 2,
+      fun: function () {
+        console.log("hello3")
+      }
+    }
+
+    //to access the function inside the object, we can use the dot notation
+    object1.fun(); //hello3
+
+
+    console.log("------- Passing a value into a function  ---------");
+
+
+
+    function display(param) {
+      console.log(param)
+    }
+
+    display(2); //2
+
+
+    console.log("------- Passing a function into another function  ---------");
+
+    function run(param) {
+      //param() is a parameter but in the call that param is a function, so we can call it like a function, otherwise won't work.
+      param();
+    }
+
+    run(function () {
+      console.log("hello4")
+    })
+
+    console.log("------- asynchronous Code ---------");
+    //asynchronous code is a code that doesn't run in order, it runs in the background and doesn't block the execution of the code. like the example below
+
+
+    //setTimeout needs
+
+    setTimeout( function(){
+      console.log("timeout");
+    }, 3000);
+
+    //this line will executed first because the setTimeout is asynchronous, it will wait for 3 seconds before executing the function inside it.
+    console.log("next line");
+
+  </script>
+</body>
+
+</html>
