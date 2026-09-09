@@ -84,6 +84,16 @@
     //this line will executed first because the setTimeout is asynchronous, it will wait for 3 seconds before executing the function inside it.
     console.log("next line");
 
+
+    // this is an example of how works setInterval, it will execute the function inside it every 3 seconds until we stop it.
+    setInterval( function(){
+      console.log("interval");
+    }, 3000);
+
+    console.log("next line 2"); //this line will executed as second after the console.log() because the setInterval is asynchronous, it will wait for 3 seconds before executing the function inside it.
+
+
+
   </script>
 </body>
 
