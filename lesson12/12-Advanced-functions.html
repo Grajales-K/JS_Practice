@@ -77,7 +77,7 @@
 
     //setTimeout needs
 
-    setTimeout( function(){
+    setTimeout(function () {
       console.log("timeout");
     }, 3000);
 
@@ -86,12 +86,23 @@
 
 
     // this is an example of how works setInterval, it will execute the function inside it every 3 seconds until we stop it.
-    setInterval( function(){
+    setInterval(function () {
       console.log("interval");
     }, 3000);
 
     console.log("next line 2"); //this line will executed as second after the console.log() because the setInterval is asynchronous, it will wait for 3 seconds before executing the function inside it.
 
+    console.log("------- Loop Through an array --------- ");
+
+    //this is another way to iterate an array, so, it loops through each element for each element, then it will execute the function inside it, and the value of the element will be passed as a parameter to the function.
+    ['make dinner', 'wash dishes', 'do laundry'].forEach(function (value) {
+      console.log(value)
+    });
+
+    //we can give 2 parametres to for each method, this is the best way to iterate an array and easy to read.
+    ['make dinner', 'wash dishes', 'do laundry'].forEach(function (value, index) {
+      console.log(value, index)
+    })
 
 
   </script>
