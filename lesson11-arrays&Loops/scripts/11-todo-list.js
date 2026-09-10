@@ -17,8 +17,6 @@ console.log(todoList);
 
 function renderToddoList() {
   let todoListHTML = '';
-function renderToddoList() {
-  let todoListHTML = '';
 
   for (let i = 0; i < todoList.length; i++) {
     const todoObject = todoList[i];
@@ -44,9 +42,6 @@ function renderToddoList() {
   document.querySelector('.js-todo-list').innerHTML = todoListHTML;
 }
 
-function addTodo() {
-  const inputElement = document.querySelector('.js-name-input');
-  const name = inputElement.value;
 function addTodo() {
   const inputElement = document.querySelector('.js-name-input');
   const name = inputElement.value;
