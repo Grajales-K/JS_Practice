@@ -78,7 +78,7 @@
     //setTimeout needs
 
     setTimeout(function () {
-      console.log("timeout");
+      console.log("'timeout' line 81" );
     }, 3000);
 
     //this line will executed first because the setTimeout is asynchronous, it will wait for 3 seconds before executing the function inside it.
@@ -87,7 +87,7 @@
 
     // this is an example of how works setInterval, it will execute the function inside it every 3 seconds until we stop it.
     setInterval(function () {
-      console.log("interval");
+      console.log("'interval' line 90");
     }, 3000);
 
     console.log("next line 2"); //this line will executed as second after the console.log() because the setInterval is asynchronous, it will wait for 3 seconds before executing the function inside it.
@@ -102,8 +102,27 @@
     //we can give 2 parametres to for each method, this is the best way to iterate an array and easy to read.
     ['make dinner', 'wash dishes', 'do laundry'].forEach(function (value, index) {
       console.log(value, index)
-    })
+    });
 
+
+
+    //this return will work similar like continue and won't stop because for each method doesn't have a break statement, so it will continue to the next iteration of the loop.
+    ['cooking', 'wash clothes', 'laundry'].forEach(function (value) {
+      if (value === 'wash clothes') {
+        return; //this will skip the current iteration and move to the next one, so it won't print "wash clothes" in the console.
+      } else {
+        console.log(value, "will print all the values except 'wash clothes' because of the return statement");
+      }
+    });
+
+    const tareas = ['cooking', 'wash clothes', 'laundry'];
+
+    for (const value of tareas) {
+      if (value === 'wash clothes') {
+        break; // Detiene el bucle por completo
+      }
+      console.log(value, 'now print "cooking" and break the loop');
+    }
 
   </script>
 </body>
