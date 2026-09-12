@@ -33,12 +33,26 @@ console.log('======== 12c. button with event ========');
 
 const container = document.querySelector('.event-btn');
 const button = document.createElement('button');
-button.textContent = 'clicke me';
+button.textContent = 'Start';
 container.appendChild(button);
 
 button.addEventListener('click', function(){
     setTimeout(function(){
-        button.textContent = 'finished';
+        button.textContent = 'Finished';
     }, 1000);
 });
 
+console.log('======== 12d. button with event ========');
+/*12d. Continuing from the previus exercise, modify the button so that when we click it, the text inmmediately changes to 'loading...', and after 1 second, it changes to 'finished'.*/
+
+const container2 = document.querySelector('.event-btn2');
+const button2 = document.createElement('button');
+button2.textContent = 'start';
+container2.appendChild(button2);
+
+button2.addEventListener('click', function(){
+    button2.textContent = 'loading...';
+    setTimeout(function(){
+        button2.textContent = 'finished';
+    }, 1000);
+});
