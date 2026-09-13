@@ -74,6 +74,50 @@ button3.addEventListener('click', function () {
 });
 
 
+console.log('======== 12f. Challenge Exercises ========');
+/*12f. Continuing from 12e, If we click the button, wait 1 to 1.5 seconds, and then click the button again, notice that the second time, the message dissapears very quickly (because the first SetTiemout is still running and will make the message disappear very soon).
+
+Modify the code so when we click the button, it refreshes the 2 seconds wait time, wait for two seconds and remove message.*/
+
+console.log('======== 12f. Challenge Exercises ========');
+
+const container4 = document.querySelector('.add-btn2');
+const button4 = document.createElement('button');
+button4.textContent = 'Add to Cart';
+container4.appendChild(button4);
+
+const message = document.createElement('p');
+container4.appendChild(message);
 
 
+let timeoutId;
 
+button4.addEventListener('click', function () {
+  message.textContent = 'Added';
+  //this will clean the time in case event is triggered again before the timeout is completed, so the message will stay for 2 seconds after the last click.
+  clearTimeout(timeoutId);
+
+  // 3. Guardamos el nuevo temporizador en la variable
+  timeoutId = setTimeout(function () {
+    message.textContent = '';
+  }, 2000);
+});
+
+console.log('======== 12g. setInterval change the title. ========');
+/*12g. Imagine we're creating a messaging app. Use setInterval and documents.title to create the features on the right (the title changes every 1 second). */
+
+function changeTitle() {
+  let isNewMessage = false;
+
+  setInterval(function () {
+    if (isNewMessage) {
+      document.title = 'App';
+      isNewMessage = false;
+    } else {
+      document.title = '(2) New Messages';
+      isNewMessage = true;
+    }
+  }, 1000);
+}
+
+changeTitle();
