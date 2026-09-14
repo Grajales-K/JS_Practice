@@ -106,18 +106,85 @@ button4.addEventListener('click', function () {
 console.log('======== 12g. setInterval change the title. ========');
 /*12g. Imagine we're creating a messaging app. Use setInterval and documents.title to create the features on the right (the title changes every 1 second). */
 
-function changeTitle() {
-  let isNewMessage = false;
 
-  setInterval(function () {
+// function changeTitle() {
+//   let isNewMessage = false;
+
+//   setInterval(function () {
+//     if (isNewMessage) {
+//       document.title = 'App';
+//       isNewMessage = false;
+//     } else {
+//       document.title = '(2) New Messages';
+//       isNewMessage = true;
+//     }
+//   }, 1000);
+// }
+
+// changeTitle();
+
+
+console.log('======== 12h. Save messages in a variable ========');
+/* 12h. Continuing from the previous exercise, intead of displaying "(2) New Mesaages", every time, save the number of messages in a variable: let messages = 2;
+* Use the number in the variable to determine what title to display.
+* Create two buttons "Add / Remove" that remove that increase / decrease the 'mesages' variable by 1. */
+
+
+// let messages = 2;
+// let isNewMessage = false;
+
+// setInterval(function () {
+//   if (isNewMessage) {
+//     document.title = 'App';
+//     isNewMessage = false;
+//   } else {
+//     document.title = `(${messages}) New messages`;
+//     isNewMessage = true;
+//   }
+// }, 1000);
+
+// //DOM elements
+// function addMessage() {
+//   messages++;
+// }
+
+// function removeMessage() {
+//   if (messages > 0) {
+//     messages--;
+//   }
+// }
+
+
+console.log('======== 12i. Stop title change when messages is 0 ========');
+/* 12i. Continuing from the previous exercise. Don't let 'messages' go below 0.
+*if messages === 0 stop changing the title and display 'App' as a title.
+*when messages > 0 star changing the title again.
+*/
+
+
+let messages = 2;
+let isNewMessage = false;
+
+setInterval(function () {
+  if (messages === 0) {
+    document.title = 'App';
+  } else {
     if (isNewMessage) {
       document.title = 'App';
       isNewMessage = false;
     } else {
-      document.title = '(2) New Messages';
+      document.title = `(${messages}) New messages`;
       isNewMessage = true;
     }
-  }, 1000);
+  }
+}, 1000);
+
+function addMessage() {
+  messages++;
 }
 
-changeTitle();
+function removeMessage() {
+  if (messages > 0) {
+    messages--;
+  }
+}
