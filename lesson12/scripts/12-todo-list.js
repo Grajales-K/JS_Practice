@@ -1,3 +1,4 @@
+
 // / 11x update the todList to use localStorage (if we modify the todoList and refresh the page, the todo list should stay the same. you can use JSON.stringify() and JSON.parse() to store and retrieve the todoList from localStorage).
 
 let todoList = JSON.parse(localStorage.getItem('todoList')) || [
@@ -18,27 +19,26 @@ console.log(todoList);
 function renderToddoList() {
   let todoListHTML = '';
 
-  for (let i = 0; i < todoList.length; i++) {
-    const todoObject = todoList[i];
-    // const name = todoObject.name;
-    // const dueDate = todoObject.dueDate;
-    const { name, dueDate } = todoObject; // Destructuring method.
 
-    const html = `
+  todoList.forEach(function(todoObject, index){
+        const { name, dueDate } = todoObject; // Destructuring method.
+
+        const html = `
                 <div>${name}</div>
                 <div>${dueDate}</div>
                 <button onclick="
-                    todoList.splice(${i}, 1);
+                    todoList.splice(${index}, 1);
                     saveToStorage(); 
                     renderToddoList();
                     " class="delete-todo-button">Delete</button>`;
-    todoListHTML += html;
-  }
+        todoListHTML += html;
+   });
 
   console.log(todoListHTML);
 
   document.querySelector('.js-todo-list').innerHTML = todoListHTML;
 }
+
 
 function addTodo() {
   const inputElement = document.querySelector('.js-name-input');
@@ -63,7 +63,6 @@ function addTodo() {
   //To avoid the element being lost when the page is refreshed, we add saveToStorage() function to store the todoList in the browser's memory.
   saveToStorage();
   renderToddoList();
-
 }
 
 function saveToStorage() {
