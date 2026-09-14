@@ -26,12 +26,11 @@ p {
   margin-bottom: 30px;
   font-size: 18px;
   font-weight: bold;
-  color: #333333;
+  color: #352a2a;
 }
 
-/* Estilo genérico para todos los botones */
 button {
-  background-color: #2b2b2b;
+  background-color: #9e7979;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -43,12 +42,10 @@ button {
   transition: background-color 0.15s ease, transform 0.1s ease;
 }
 
-/* Efecto cuando pasas el ratón por encima */
 button:hover {
-  background-color: #404040;
+  background-color: #493e3e;
 }
 
-/* Efecto cuando haces clic (se hunde ligeramente) */
 button:active {
   transform: scale(0.97);
   background-color: #1a1a1a;
