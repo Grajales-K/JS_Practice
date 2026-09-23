@@ -10,17 +10,17 @@
     ['not', 'found'] => console.log(-1) */
 
     const stringArr = ['hello', 'world', 'search', 'good'];
-    const stringArr2 = ['not', 'found'];
 
     let foundIndex = -1;
 
     for (let i = 0; i < stringArr.length; i++) {
       if (stringArr[i] === 'search') {
         foundIndex = i;
+        break; // Stop searching once found
       }
     }
-    console.log(foundIndex);
-
+    
+    console.log(foundIndex); // Output: 2
 
     console.log('======== 11p find the first element ========');
     // Modify 11o so that if 'search' appears multiple times in the array, console.log the firs element of it in the array. 
