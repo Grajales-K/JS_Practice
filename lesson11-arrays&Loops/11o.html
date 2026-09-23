@@ -19,7 +19,7 @@
         break; // Stop searching once found
       }
     }
-    
+
     console.log(foundIndex); // Output: 2
 
     console.log('======== 11p find the first element ========');
@@ -101,22 +101,26 @@
     // removeEgg(['egg', 'appe', 'egg', 'egg', 'ham']) => ['egg', 'appe', 'ham']
 
     function removeEgg3(foods) {
+      console.log(foods, 'original array')
+      //with this we take the array and create a copy of it and reverse to remove the last 2 egg from the array.
+      let reverserArray = foods.slice().reverse(); // [ 'ham', 'egg', 'egg', 'appe', 'egg' ]
+      console.log(reverserArray, 'reversed array')
+
       let newArr = [];
       let eggCounter = 0;
 
-      for (let i = 0; i < foods.length; i++) {
-        if (foods[i] === 'egg' && eggCounter < 2) {
+      for (let i = 0; i < reverserArray.length; i++) {
+        if (reverserArray[i] === 'egg' && eggCounter < 2) {
           eggCounter++;
-          continue;
         } else {
-          newArr.push(foods[i])
+          newArr.push(reverserArray[i])
         }
       }
 
       return newArr.reverse();
     }
 
-    console.log(removeEgg3(['egg', 'appe', 'egg', 'egg', 'ham'])); // ['egg', 'appe', 'ham']
+    console.log(removeEgg3(['egg', 'appe', 'egg', 'egg', 'ham']));// ['egg', 'appe', 'ham']
 
 
     console.log('======== 11u mutating the elements in the array ========');
