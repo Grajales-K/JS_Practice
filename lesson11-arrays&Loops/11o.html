@@ -56,7 +56,7 @@
 
     console.log('======== 11r Create a funtion removeEgg(foods) ========');
     // Create a function removeEgg(foods) that takes an array of string and returns an array where the string 'egg' is removed. (hint: loop through the array and check if each string is 'egg', if it is continue; to skip it, if it's not 'egg', add it to the result) 
-    // removeEgg(['egg', 'appe', 'egg', 'egg', 'ham']) => ['appe', 'ham']
+    // removeEgg(['egg', 'apple', 'egg', 'egg', 'ham']) => ['appe', 'ham']
 
     function removeEgg(foods) {
       let newArr = [];
@@ -71,11 +71,11 @@
       return newArr;
     }
 
-    console.log(removeEgg(['egg', 'appe', 'egg', 'egg', 'ham'])); // ['appe', 'ham']
+    console.log(removeEgg(['egg', 'apple', 'egg', 'egg', 'ham'])); // ['apple', 'ham']
 
 
     console.log('======== 11s Create a funtion removeEgg(foods) ========');
-    // Update the exercise 11r to remove the first 2 egg from the array. remove(['egg', 'appe', 'egg', 'egg', 'ham']) => ['appe', 'egg', 'ham']
+    // Update the exercise 11r to remove the first 2 egg from the array. remove(['egg', 'apple', 'egg', 'egg', 'ham']) => ['appe', 'egg', 'ham']
 
     function removeEgg2(foods) {
       let newArr = [];
@@ -93,17 +93,17 @@
       return newArr;
     }
 
-    console.log(removeEgg2(['egg', 'appe', 'egg', 'egg', 'ham'])); // ['appe', 'egg', 'ham']
+    console.log(removeEgg2(['egg', 'apple', 'egg', 'egg', 'ham'])); // ['apple', 'egg', 'ham']
 
 
     console.log('======== 11t Create a funtion removeEgg(foods) and reverse() ========');
     // Arrays have a method called .reverse() which reverses the order of the values in the array, update the  exercises 11s to only remove the last 2 egg. from the array.
     // removeEgg(['egg', 'appe', 'egg', 'egg', 'ham']) => ['egg', 'appe', 'ham']
 
-    function removeEgg3(foods) {
-      console.log(foods, 'original array')
+    function removeEgg3(food) {
+      console.log(food, 'original array')
       //with this we take the array and create a copy of it and reverse to remove the last 2 egg from the array.
-      let reverserArray = foods.slice().reverse(); // [ 'ham', 'egg', 'egg', 'appe', 'egg' ]
+      let reverserArray = food.slice().reverse(); // [ 'ham', 'egg', 'egg', 'appe', 'egg' ]
       console.log(reverserArray, 'reversed array')
 
       let newArr = [];
@@ -120,7 +120,7 @@
       return newArr.reverse();
     }
 
-    console.log(removeEgg3(['egg', 'appe', 'egg', 'egg', 'ham']));// ['egg', 'appe', 'ham']
+    console.log(removeEgg3(['egg', 'apple', 'egg', 'egg', 'ham']));// ['egg', 'appe', 'ham']
 
 
     console.log('======== 11u mutating the elements in the array ========');
@@ -128,13 +128,11 @@
 
 
 
-    const foods = ['egg', 'appe', 'egg', 'egg', 'ham'];
-
-    const foodCopy = foods.slice()
+    const foods = ['egg', 'apple', 'egg', 'egg', 'ham'];
 
     function removeEgg4(foods) {
 
-      const foodCopy = foods.slice()
+      const foodCopy = foods.slice().reverse();
 
       let newArr = [];
       let eggCounter = 0;
@@ -150,8 +148,8 @@
       return newArr.reverse();
     }
 
-    console.log(removeEgg4(foods), 'reverse arr');// ['egg', 'appe', 'ham']
-    console.log(foods, 'original array is not modified'); // ['egg', 'appe', 'egg', 'egg', 'ham'] 
+    console.log(removeEgg4(foods), 'reverse arr');//[ham, egg, apple]
+    console.log(foods, 'original array is not modified'); // ['egg', 'apple', 'egg', 'egg', 'ham'] 
 
 
     console.log('======== CHALLENGE EXERCISES ========');
@@ -169,6 +167,8 @@
         console.log('fizzbuzz');
       } else if (i % 3 === 0) {
         console.log('fizz');
+      } else if (i % 5 === 0){
+        console.log('buzz');
       } else {
         console.log(i);
       }
