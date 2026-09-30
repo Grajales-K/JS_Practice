@@ -7,22 +7,12 @@ let score = JSON.parse(localStorage.getItem('score')) || {
 
 updateScoreElement();
 
-/* just reference, the above code is equivalent to the following code:
-        if(!score) {
-            score = {
-                wins: 0,
-                losses: 0,
-                ties: 0
-            }
-        }
-        */
-
 let isAutoPlaying = false;
 let intervalId;
 
 function autoPlay() {
   if (!isAutoPlaying) {
-    intervalId = setInterval(function () {
+    intervalId = setInterval(() => {
       const playerMove = pickComputerMove();
       playGame(playerMove);
     }, 1000);
