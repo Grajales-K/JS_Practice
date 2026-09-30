@@ -36,6 +36,18 @@ document.querySelector('.js-scissors-button').addEventListener('click', () => {
   playGame('scissors');
 });
 
+
+// added a body event to allow user to play the game using keyboard keys, and this property will work and return the key pressed. this is an example of multiple event listener being used and executed.
+document.body.addEventListener('keydown', (event) => {
+  if(event.key === 'r'){
+    playGame('rock');
+  } else if(event.key === 'p'){
+    playGame('paper');
+  } else if (event.key === 's'){
+    playGame('scissors');
+  }
+})
+
 function playGame(playerMove) {
   const computerMove = pickComputerMove();
 
