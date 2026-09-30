@@ -87,7 +87,38 @@
             console.log('Second click event');
         });
 
-        
+        console.log("------- Filter and Map methods ---------");
+
+        //filter create a new array, ir the inner function returns true, the value will be added to the new array, if it returns false, the value won't be added to the new array.
+
+        //return the values if the number are > 0, return true and a new array.
+        console.log([1, -3, 5].filter((value, index) => {
+
+
+            // if (value >= 0){
+            //     return true;
+            // }else {
+            //     return false;
+            // }
+
+
+            //shorthand function
+
+            return value >= 0;
+        }));
+
+
+        //Map create a new array, executing the inner function for each element.
+        console.log([1, 1, 3].map((value, index) => {
+            return value + 10;
+        }))
+
+        console.log([1, 1, 3].map(value => value * 2));
+
+        console.log(" ---------  Closure ---------");
+
+        // if a function has acces to a value, it will always have access to that value.
+
 
 
 
