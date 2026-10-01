@@ -7,6 +7,7 @@ let score = JSON.parse(localStorage.getItem('score')) || {
 
 updateScoreElement();
 
+
 const stopButton = document.querySelector('.auto-play-button ');
 const resetButton = document.querySelector('.reset-score-button');
 const resetMessage = document.querySelector('.reset-message'); //12x
@@ -21,7 +22,7 @@ resetButton.addEventListener('click', () => {
   showResetConfirmation();
 });
 
-//12v create a function to reset the score and ready to use it in diferent places.
+// 12v create a function to reset the score and ready to use it in diferent places.
 function resetScore() {
   score.wins = 0;
   score.losses = 0;
@@ -70,6 +71,7 @@ function autoPlay() {
   }
 }
 
+
 document.querySelector('.js-rock-button').addEventListener('click', () => {
   playGame('rock');
 });
@@ -81,6 +83,20 @@ document.querySelector('.js-paper-button').addEventListener('click', () => {
 document.querySelector('.js-scissors-button').addEventListener('click', () => {
   playGame('scissors');
 });
+
+// --------------------------
+
+/* I have this other option to update the reset button, where I can use the resetScore function directly in the event listener, but I did  the function showResetConfirmation function to display a message before resetting the score. This way, the user can confirm or cancel the action before the score is reset. 
+
+thi is displayed on line 11 and 19  */
+
+// document.querySelector('.reset-score-button')
+//   .addEventListener('click', () =>{
+//       showResetConfirmation();
+//   })
+
+// -------------------- 
+
 
 // added a body event to allow user to play the game using keyboard keys, and this property will work and return the key pressed. this is an example of multiple event listener being used and executed.
 document.body.addEventListener('keydown', (event) => {
