@@ -8,11 +8,32 @@ let score = JSON.parse(localStorage.getItem('score')) || {
 updateScoreElement();
 
 const stopButton = document.querySelector('.auto-play-button ');
+const resetButton = document.querySelector('.reset-score-button');
+const resetMessage = document.querySelector('.reset-message');
 
-// exercise 12j.
+// exercise 12t.
 stopButton.addEventListener('click', () => {
-    autoPlay();
-  });
+  autoPlay();
+});
+
+// 12v exercise update event Reset Score.
+resetButton.addEventListener('click', () => {
+  resetScore();
+});
+
+//12v create a function to reset the score and ready to use it in diferent places.
+function resetScore() {
+  score.wins = 0;
+  score.losses = 0;
+  score.ties = 0;
+  localStorage.removeItem('score');
+  updateScoreElement();
+}
+
+
+// resetMessage.addEventListener('click', () => {
+
+// }
 
 
 let isAutoPlaying = false;
@@ -33,10 +54,9 @@ function autoPlay() {
   }
 }
 
-document.querySelector('.js-rock-button')
-  .addEventListener('click', () => {
-    playGame('rock');
-  });
+document.querySelector('.js-rock-button').addEventListener('click', () => {
+  playGame('rock');
+});
 
 document.querySelector('.js-paper-button').addEventListener('click', () => {
   playGame('paper');
@@ -46,17 +66,20 @@ document.querySelector('.js-scissors-button').addEventListener('click', () => {
   playGame('scissors');
 });
 
-
 // added a body event to allow user to play the game using keyboard keys, and this property will work and return the key pressed. this is an example of multiple event listener being used and executed.
 document.body.addEventListener('keydown', (event) => {
-  if(event.key === 'r'){
+  if (event.key === 'r') {
     playGame('rock');
-  } else if(event.key === 'p'){
+  } else if (event.key === 'p') {
     playGame('paper');
-  } else if (event.key === 's'){
-    playGame('scissors');
+  } else if (event.key === 's') {
+    playGame('scissors'); //exercise 12u. 
+  } else if (event.key === 'a') {
+    autoPlay();
+  } else if (event.key === 'Backspace') {
+    resetScore();
   }
-})
+});
 
 function playGame(playerMove) {
   const computerMove = pickComputerMove();
