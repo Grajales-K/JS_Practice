@@ -9,7 +9,7 @@ updateScoreElement();
 
 const stopButton = document.querySelector('.auto-play-button ');
 const resetButton = document.querySelector('.reset-score-button');
-const resetMessage = document.querySelector('.reset-message');
+const resetMessage = document.querySelector('.reset-message'); //12x
 
 // exercise 12t.
 stopButton.addEventListener('click', () => {
@@ -18,7 +18,7 @@ stopButton.addEventListener('click', () => {
 
 // 12v exercise update event Reset Score.
 resetButton.addEventListener('click', () => {
-  resetScore();
+  showResetConfirmation();
 });
 
 //12v create a function to reset the score and ready to use it in diferent places.
@@ -31,9 +31,25 @@ function resetScore() {
 }
 
 
-// resetMessage.addEventListener('click', () => {
+//12x. display a message before to reset the score and hide the message after the user confirm or cancel the action.
+function showResetConfirmation() {
+  resetMessage.innerHTML = `
+    Are you sure you want to reset the score?
+    <button class="confirm-reset-button">Yes</button>
+    <button class="cancel-reset-button">No</button>`;
 
-// }
+  //Lister for user confirmation to reset the score.
+  document.querySelector('.confirm-reset-button')
+    .addEventListener('click', () => {
+      resetScore();
+      resetMessage.innerHTML = ''; // hide the message after resetting the score
+    });
+
+  document.querySelector('.cancel-reset-button')
+    .addEventListener('click', () => {
+      resetMessage.innerHTML = '';
+    });
+}
 
 
 let isAutoPlaying = false;
@@ -73,7 +89,7 @@ document.body.addEventListener('keydown', (event) => {
   } else if (event.key === 'p') {
     playGame('paper');
   } else if (event.key === 's') {
-    playGame('scissors'); //exercise 12u. 
+    playGame('scissors'); //exercise 12u.
   } else if (event.key === 'a') {
     autoPlay();
   } else if (event.key === 'Backspace') {
