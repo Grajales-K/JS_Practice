@@ -117,17 +117,19 @@
 
         console.log(" ---------  Closure ---------");
 
-        // if a function has acces to a value, it will always have access to that value.
+        //If a function has access to a variable at the time of its creation, it will retain access to that variable even after its parent scope has finished executing.
 
 
+        function init() {
+            var name = "Mozilla"; // name is a local variable created by init
+            function displayName() {
+                // displayName() is the inner function, that forms a closure
+                console.log(name); // use variable declared in the parent function
+            }
+            displayName();
+        }
 
-
-
-
-
-
-
-
+        init();
 
     </script>
 
