@@ -7,6 +7,14 @@ let score = JSON.parse(localStorage.getItem('score')) || {
 
 updateScoreElement();
 
+const stopButton = document.querySelector('.auto-play-button ');
+
+// exercise 12j.
+stopButton.addEventListener('click', () => {
+    autoPlay();
+  });
+
+
 let isAutoPlaying = false;
 let intervalId;
 
@@ -17,9 +25,11 @@ function autoPlay() {
       playGame(playerMove);
     }, 1000);
     isAutoPlaying = true;
+    stopButton.innerHTML = 'Stop Playing';
   } else {
     clearInterval(intervalId);
     isAutoPlaying = false;
+    stopButton.innerHTML = 'Auto Play';
   }
 }
 
