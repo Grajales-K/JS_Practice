@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refactoring exercises</title>
+</head>
+
+<body>
+
+    <div class="event-btn"></div>
+    <div class="event-btn2"></div>
+    <div class="add-btn"></div>
+    <div class="add-btn2"></div>
+
+    <div>
+        <p> 12i. Stop title change when messages is 0</p>
+        <button onclick="addMessage()">Add</button>
+        <button onclick="removeMessage()">Remove</button>
+    </div>
+
+    <script>
+
+        console.log('======== 12p. button with event arrow function ========');
+        /* 12p. Go back to the exercise 12c-12i and switch the code to use arrow function. When you passing a function into
+        another, use arrow functions. Otherwise, you can use either syntax.
+
+        //12c. create a button. When clicking the button, after 1 second, the text inside the button changes to 'finished', use
+        setTimeout() and DOM. */
+
+        const container = document.querySelector('.event-btn');
+        const button = document.createElement('button');
+        button.textContent = 'Start';
+        container.appendChild(button);
+
+        // button.addEventListener('click', function () {
+        // setTimeout(function () {
+        // button.textContent = 'Finished';
+        // }, 1000);
+        // });
+
+        button.addEventListener('click', () => {
+            setTimeout(() => {
+                button.textContent = "Finished";
+            }, 1000)
+        });
+
+        console.log('======== 12e. button event message arrow function ========');
+
+        /*12e. Create a 'Add to Cart' button. When clicking the button, display the message 'added' below the button. Then, after 2 seconds, remove the message. */
+
+
+
+
+
+    </script>
+</body>
+
+</html>
