@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson12 Advaced Functions</title>
+</head>
+
+<body>
+    <!-- ------- Event Listener --------- -->
+    <button class="js-button" onclick="">Click me</button>
+
+
+
+    <script>
+        //---------- class 12-2 - arrow Functions -----------
+
+        const regularFunction = function (param) {
+            console.log('hello')
+        };
+
+        regularFunction(); //hello
+
+        const arrowFunction = (param, param2) => {
+            console.log('hello')
+        };
+
+        arrowFunction(); //hello
+
+
+        // when the arrow functions has only one parameter, we can omit the parentheses around the parameter.
+        const oneParam = param => {
+            console.log(param + 1)
+        };
+
+        oneParam(2); //3
+
+
+        const oneLine = () => 2 + 3;
+
+        console.log(oneLine()); //5
+
+
+        [
+            'make a dinner',
+            'make shooping',
+            'sleep 8 hours'
+        ].forEach((value, index) => {
+            if (value === 'make shooping') {
+                return; //won't print this value 
+            }
+        })
+
+        // arrow funtion inside an object, this is a better way to write a function inside an object, because we can use the shorthand method.
+        console.log("------- ShortHand Method ---------");
+
+        const object = {
+            method: () => {
+
+            },
+            method() {
+
+            }
+        };
+
+        console.log("------- Event Listener ---------");
+
+        const buttonElement = document.querySelector('.js-button');
+
+        // The event listener has two paramentres, the first is what type of event we want to listen, and the second is a function that will be executed when the event is triggered. In this case, we are listening for a click event, and when the button is clicked, the function will be executed.
+
+        // adding listener can be add multiple events that will be executed when the event is triggered, the event will be executed in order, also, we can remove the events.
+
+        // we can also remove an event listener. this need to paramentres, so, we can save the function in a variable and pass it as a parameter to the removeEventListener method.
+
+
+        const clickEvent = () => {
+            console.log('button clicked');
+        }
+
+        buttonElement.addEventListener('click', clickEvent);
+        buttonElement.removeEventListener('click', clickEvent);
+
+
+        buttonElement.addEventListener('click', () => {
+            console.log('Second click event');
+        });
+
+        console.log("------- Filter and Map methods ---------");
+
+        //filter create a new array, ir the inner function returns true, the value will be added to the new array, if it returns false, the value won't be added to the new array.
+
+        //return the values if the number are > 0, return true and a new array.
+        console.log([1, -3, 5].filter((value, index) => {
+
+
+            // if (value >= 0){
+            //     return true;
+            // }else {
+            //     return false;
+            // }
+
+
+            //shorthand function
+
+            return value >= 0;
+        }));
+
+
+        //Map create a new array, executing the inner function for each element.
+        console.log([1, 1, 3].map((value, index) => {
+            return value + 10;
+        }))
+
+        console.log([1, 1, 3].map(value => value * 2));
+
+        console.log(" ---------  Closure ---------");
+
+        //If a function has access to a variable at the time of its creation, it will retain access to that variable even after its parent scope has finished executing.
+
+
+        function init() {
+            var name = "Mozilla"; // name is a local variable created by init
+            function displayName() {
+                // displayName() is the inner function, that forms a closure
+                console.log(name); // use variable declared in the parent function
+            }
+            displayName();
+        }
+
+        init();
+
+    </script>
+
+</body>
+
+</html>

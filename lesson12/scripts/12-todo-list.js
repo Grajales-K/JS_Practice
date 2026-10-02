@@ -1,4 +1,3 @@
-
 // / 11x update the todList to use localStorage (if we modify the todoList and refresh the page, the todo list should stay the same. you can use JSON.stringify() and JSON.parse() to store and retrieve the todoList from localStorage).
 
 let todoList = JSON.parse(localStorage.getItem('todoList')) || [
@@ -12,6 +11,9 @@ let todoList = JSON.parse(localStorage.getItem('todoList')) || [
   }
 ];
 
+document.querySelector('.js-add-todo-button').addEventListener('click', () => {
+  addTodo();
+});
 
 renderToddoList();
 console.log(todoList);
@@ -19,26 +21,32 @@ console.log(todoList);
 function renderToddoList() {
   let todoListHTML = '';
 
+  todoList.forEach((todoObject, index) => {
+    const { name, dueDate } = todoObject; // Destructuring method.
 
-  todoList.forEach(function(todoObject, index){
-        const { name, dueDate } = todoObject; // Destructuring method.
-
-        const html = `
+    const html = `
                 <div>${name}</div>
                 <div>${dueDate}</div>
-                <button onclick="
-                    todoList.splice(${index}, 1);
-                    saveToStorage(); 
-                    renderToddoList();
-                    " class="delete-todo-button">Delete</button>`;
-        todoListHTML += html;
-   });
+                <button class="delete-todo-button js-delete-todo-button">Delete</button>`;
+    todoListHTML += html;
+  });
 
   console.log(todoListHTML);
 
   document.querySelector('.js-todo-list').innerHTML = todoListHTML;
-}
 
+  //  querySelectAll will take all elements that match with that class.
+  document
+    .querySelectorAll('.js-delete-todo-button')
+    .forEach((deleteButton, index) => {
+      deleteButton.addEventListener('click', () => {
+        todoList.splice(index, 1);
+        saveToStorage();
+        renderToddoList();
+      });
+    });
+
+}
 
 function addTodo() {
   const inputElement = document.querySelector('.js-name-input');
@@ -46,7 +54,6 @@ function addTodo() {
 
   const dateInputElelement = document.querySelector('.js-due-date-input');
   const dueDate = dateInputElelement.value || 'no date';
-
 
   // todoList.push({ name: name, dueDate: dueDate });
   //shorthand property method, if the key and value are the same, you can just write the key name.
