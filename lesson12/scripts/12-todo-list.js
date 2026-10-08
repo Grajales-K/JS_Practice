@@ -52,6 +52,11 @@ function addTodo() {
   const inputElement = document.querySelector('.js-name-input');
   const name = inputElement.value;
 
+  //preventing the user from adding an empty todo item.
+   if (name.trim() === '') {
+     return;
+   }
+
   const dateInputElelement = document.querySelector('.js-due-date-input');
   const dueDate = dateInputElelement.value || 'no date';
 
