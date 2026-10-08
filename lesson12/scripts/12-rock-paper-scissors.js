@@ -7,31 +7,111 @@ let score = JSON.parse(localStorage.getItem('score')) || {
 
 updateScoreElement();
 
-/* just reference, the above code is equivalent to the following code:
-        if(!score) {
-            score = {
-                wins: 0,
-                losses: 0,
-                ties: 0
-            }
-        }
-        */
+
+const stopButton = document.querySelector('.auto-play-button ');
+const resetButton = document.querySelector('.reset-score-button');
+const resetMessage = document.querySelector('.reset-message'); //12x
+
+// exercise 12t.
+stopButton.addEventListener('click', () => {
+  autoPlay();
+});
+
+// 12v exercise update event Reset Score.
+resetButton.addEventListener('click', () => {
+  showResetConfirmation();
+});
+
+// 12v create a function to reset the score and ready to use it in diferent places.
+function resetScore() {
+  score.wins = 0;
+  score.losses = 0;
+  score.ties = 0;
+  localStorage.removeItem('score');
+  updateScoreElement();
+}
+
+
+//12x. display a message before to reset the score and hide the message after the user confirm or cancel the action.
+function showResetConfirmation() {
+  resetMessage.innerHTML = `
+    Are you sure you want to reset the score?
+    <button class="confirm-reset-button">Yes</button>
+    <button class="cancel-reset-button">No</button>`;
+
+  //Lister for user confirmation to reset the score.
+  document.querySelector('.confirm-reset-button')
+    .addEventListener('click', () => {
+      resetScore();
+      resetMessage.innerHTML = ''; // hide the message after resetting the score
+    });
+
+  document.querySelector('.cancel-reset-button')
+    .addEventListener('click', () => {
+      resetMessage.innerHTML = '';
+    });
+}
+
 
 let isAutoPlaying = false;
 let intervalId;
 
 function autoPlay() {
   if (!isAutoPlaying) {
-    intervalId = setInterval(function () {
+    intervalId = setInterval(() => {
       const playerMove = pickComputerMove();
       playGame(playerMove);
     }, 1000);
     isAutoPlaying = true;
+    stopButton.innerHTML = 'Stop Playing';
   } else {
     clearInterval(intervalId);
     isAutoPlaying = false;
+    stopButton.innerHTML = 'Auto Play';
   }
 }
+
+
+document.querySelector('.js-rock-button').addEventListener('click', () => {
+  playGame('rock');
+});
+
+document.querySelector('.js-paper-button').addEventListener('click', () => {
+  playGame('paper');
+});
+
+document.querySelector('.js-scissors-button').addEventListener('click', () => {
+  playGame('scissors');
+});
+
+// --------------------------
+
+/* I have this other option to update the reset button, where I can use the resetScore function directly in the event listener, but I did  the function showResetConfirmation function to display a message before resetting the score. This way, the user can confirm or cancel the action before the score is reset. 
+
+thi is displayed on line 11 and 19  */
+
+// document.querySelector('.reset-score-button')
+//   .addEventListener('click', () =>{
+//       showResetConfirmation();
+//   })
+
+// -------------------- 
+
+
+// added a body event to allow user to play the game using keyboard keys, and this property will work and return the key pressed. this is an example of multiple event listener being used and executed.
+document.body.addEventListener('keydown', (event) => {
+  if (event.key === 'r') {
+    playGame('rock');
+  } else if (event.key === 'p') {
+    playGame('paper');
+  } else if (event.key === 's') {
+    playGame('scissors'); //exercise 12u.
+  } else if (event.key === 'a') {
+    autoPlay();
+  } else if (event.key === 'Backspace') {
+    resetScore();
+  }
+});
 
 function playGame(playerMove) {
   const computerMove = pickComputerMove();
